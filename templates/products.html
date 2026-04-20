@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Our Products</h1>
+<p>Complete Digital Solutions for Institutions</p>
+</div>
+</section>
+
+
+<section class="products-section">
+<div class="container">
+
+<div class="products-grid">
+
+<div class="product-card">
+<img src="{% static 'products/erp.png' %}">
+<h3>School ERP</h3>
+<p>Complete school management software</p>
+<a href="#">View Details</a>
+</div>
+
+<div class="product-card">
+<img src="{% static 'products/attendance.png' %}">
+<h3>Attendance System</h3>
+<p>Biometric & RFID attendance solution</p>
+<a href="#">View Details</a>
+</div>
+
+<div class="product-card">
+<img src="{% static 'products/app.png' %}">
+<h3>Mobile App</h3>
+<p>Parent teacher communication app</p>
+<a href="#">View Details</a>
+</div>
+
+<div class="product-card">
+<img src="{% static 'products/website.png' %}">
+<h3>School Website</h3>
+<p>Dynamic institutional website</p>
+<a href="#">View Details</a>
+</div>
+
+<div class="product-card">
+<img src="{% static 'products/sms.png' %}">
+<h3>Bulk SMS</h3>
+<p>Communication & notification system</p>
+<a href="#">View Details</a>
+</div>
+
+<div class="product-card">
+<img src="{% static 'products/cctv.png' %}">
+<h3>CCTV Monitoring</h3>
+<p>Security surveillance solutions</p>
+<a href="#">View Details</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+{% endblock %}

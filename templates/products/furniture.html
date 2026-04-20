@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>School & College Furniture</h1>
+<p>Durable Furniture for Educational Institutions</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Institution Furniture Solutions</h2>
+
+<p>
+ScholVex provides high-quality furniture for schools 
+and colleges including classroom desks, chairs, 
+office furniture and lab furniture.
+</p>
+
+<ul>
+<li>Classroom Benches</li>
+<li>Student Chairs</li>
+<li>Teacher Tables</li>
+<li>Office Furniture</li>
+<li>Library Furniture</li>
+<li>Lab Furniture</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/furniture.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-chair"></i>
+<h3>Classroom Furniture</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-table"></i>
+<h3>Teacher Tables</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-book"></i>
+<h3>Library Furniture</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-building"></i>
+<h3>Office Furniture</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-flask"></i>
+<h3>Lab Furniture</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-shield"></i>
+<h3>Durable Quality</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Get Furniture Quotation</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

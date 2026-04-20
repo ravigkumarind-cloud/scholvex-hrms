@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="careers-section">
+<div class="container">
+
+<h2 class="section-title">Candidate Dashboard</h2>
+<p>Welcome, {{ profile.full_name }}</p>
+
+{% if messages %}
+{% for message in messages %}
+<p style="background:#ecfdf3;color:#067647;padding:12px;border-radius:4px;">{{ message }}</p>
+{% endfor %}
+{% endif %}
+
+<div class="jobs-grid">
+
+{% for application in applications %}
+<div class="job-card">
+<h3>{{ application.job_title }}</h3>
+<p>{{ application.department }}</p>
+<span>{{ application.location }}</span>
+
+<div style="margin-top:15px;">
+<strong>Status:</strong> {{ application.get_status_display }}
+</div>
+
+<div style="margin-top:15px;display:grid;gap:8px;">
+<div>1. Applied {% if application.status == "APPLIED" or application.status == "SCREENING" or application.status == "SHORTLISTED" or application.status == "INTERVIEW" or application.status == "SELECTED" %}Done{% endif %}</div>
+<div>2. Screening {% if application.status == "SCREENING" or application.status == "SHORTLISTED" or application.status == "INTERVIEW" or application.status == "SELECTED" %}Done{% endif %}</div>
+<div>3. Shortlisted {% if application.status == "SHORTLISTED" or application.status == "INTERVIEW" or application.status == "SELECTED" %}Done{% endif %}</div>
+<div>4. Interview {% if application.status == "INTERVIEW" or application.status == "SELECTED" %}Done{% endif %}</div>
+<div>5. Selected {% if application.status == "SELECTED" %}Done{% endif %}</div>
+</div>
+
+{% if application.notes %}
+<p><strong>HR Notes:</strong> {{ application.notes }}</p>
+{% endif %}
+
+<small>Applied on {{ application.applied_at|date:"d M Y" }}</small>
+</div>
+{% empty %}
+<div class="job-card">
+<h3>No applications yet</h3>
+<p>Apply from Careers page to start your selection process.</p>
+<a href="{% url 'careers' %}" class="apply-btn">View Careers</a>
+</div>
+{% endfor %}
+
+</div>
+
+</div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>School Diaries</h1>
+<p>Customized Student Diaries for Schools</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Custom School Diaries</h2>
+
+<p>
+ScholVex provides customized school diaries with 
+rules, academic planner, communication pages and 
+school branding.
+</p>
+
+<ul>
+<li>Custom School Design</li>
+<li>Student Information Pages</li>
+<li>School Rules Section</li>
+<li>Academic Planner</li>
+<li>Parent Communication Pages</li>
+<li>Bulk Printing</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/diaries.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-book"></i>
+<h3>Custom Design</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-school"></i>
+<h3>School Branding</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-calendar"></i>
+<h3>Academic Planner</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-comments"></i>
+<h3>Parent Communication</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-file"></i>
+<h3>Student Info Pages</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-print"></i>
+<h3>Bulk Printing</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Order School Diaries</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

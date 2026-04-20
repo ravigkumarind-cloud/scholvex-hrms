@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Reports Dashboard</h2>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Employees</h3>
+<h2>{{ total_employees }}</h2>
+<p>Company Employees</p>
+</div>
+
+<div class="card">
+<h3>Present Today</h3>
+<h2>{{ present }}</h2>
+<p>Attendance Today</p>
+</div>
+
+<div class="card">
+<h3>On Leave</h3>
+<h2>{{ leaves }}</h2>
+<p>Employees on Leave</p>
+</div>
+
+<div class="card">
+<h3>Departments</h3>
+<h2>{{ departments }}</h2>
+<p>Total Departments</p>
+</div>
+
+</div>
+
+<br><br>
+
+<div style="background:white;padding:25px;border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+
+<h3>Quick Reports</h3>
+
+<br>
+
+<a href="/employees/attendance-report/" class="btn">Attendance Report</a>
+<a href="/employees/leaves/" class="btn">Leave Report</a>
+<a href="/employees/payroll/" class="btn">Payroll Report</a>
+<a href="/employees/" class="btn">Employee Report</a>
+
+</div>
+
+<style>
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.card h2{
+color:#0f1e2e;
+}
+
+.btn{
+background:#0f1e2e;
+color:white;
+padding:10px 15px;
+text-decoration:none;
+border-radius:6px;
+margin-right:10px;
+}
+
+.btn:hover{
+background:#d4af37;
+color:black;
+}
+
+</style>
+
+{% endblock %}

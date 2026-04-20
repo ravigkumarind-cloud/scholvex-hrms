@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Department Head Dashboard</h2>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Department Employees</h3>
+<h2>{{ employees }}</h2>
+</div>
+
+<div class="card">
+<h3>Present Today</h3>
+<h2>{{ present }}</h2>
+</div>
+
+<div class="card">
+<h3>Absent</h3>
+<h2>{{ absent }}</h2>
+</div>
+
+<div class="card">
+<h3>On Leave</h3>
+<h2>{{ leaves }}</h2>
+</div>
+
+</div>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Team Leaders</h3>
+<h2>{{ tls }}</h2>
+</div>
+
+<div class="card">
+<h3>Pending Leaves</h3>
+<h2>{{ pending }}</h2>
+</div>
+
+<div class="card">
+<h3>Attendance %</h3>
+<h2>{{ attendance }}%</h2>
+</div>
+
+<div class="card">
+<h3>Department Payroll</h3>
+<h2>₹ {{ payroll }}</h2>
+</div>
+
+</div>
+
+<style>
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+</style>
+
+{% endblock %}

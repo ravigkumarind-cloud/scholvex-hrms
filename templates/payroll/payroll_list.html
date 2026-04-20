@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Payroll List</h2>
+
+<br>
+
+<div style="background:white;padding:20px;border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+
+<a href="/employees/add-payroll/"
+style="background:#0f1e2e;color:white;padding:10px 15px;
+text-decoration:none;border-radius:6px;">
++ Add Payroll
+</a>
+
+<br><br>
+
+<table style="width:100%;border-collapse:collapse;">
+
+<tr style="background:#f4f6fb;text-align:left;">
+<th style="padding:12px;">Employee</th>
+<th style="padding:12px;">Month</th>
+<th style="padding:12px;">Basic</th>
+<th style="padding:12px;">HRA</th>
+<th style="padding:12px;">Bonus</th>
+<th style="padding:12px;">Deduction</th>
+<th style="padding:12px;">Net Salary</th>
+<th style="padding:12px;">Payslip</th>
+</tr>
+
+{% for p in payroll %}
+
+<tr style="border-top:1px solid #eee;">
+
+<td style="padding:10px;">{{ p.employee.name }}</td>
+<td style="padding:10px;">{{ p.month }}</td>
+<td style="padding:10px;">{{ p.basic }}</td>
+<td style="padding:10px;">{{ p.hra }}</td>
+<td style="padding:10px;">{{ p.bonus }}</td>
+<td style="padding:10px;">{{ p.deduction }}</td>
+
+<td style="padding:10px;">
+<b>
+{{ p.basic|add:p.hra|add:p.bonus|add:-p.deduction }}
+</b>
+</td>
+
+<td style="padding:10px;">
+
+<a href="/employees/payslip/{{ p.id }}/"
+style="background:#1f3a5f;color:white;padding:6px 10px;
+border-radius:5px;text-decoration:none;">
+Download
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

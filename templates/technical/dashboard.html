@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Technical Department Dashboard</h2>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Engineers</h3>
+<h2>{{ engineers }}</h2>
+</div>
+
+<div class="card">
+<h3>Active Projects</h3>
+<h2>{{ projects }}</h2>
+</div>
+
+<div class="card">
+<h3>Pending Tasks</h3>
+<h2>{{ pending }}</h2>
+</div>
+
+<div class="card">
+<h3>Completed</h3>
+<h2>{{ completed }}</h2>
+</div>
+
+</div>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Server Status</h3>
+<h2>{{ servers }}</h2>
+</div>
+
+<div class="card">
+<h3>Support Tickets</h3>
+<h2>{{ tickets }}</h2>
+</div>
+
+<div class="card">
+<h3>Deployments</h3>
+<h2>{{ deploy }}</h2>
+</div>
+
+<div class="card">
+<h3>System Health</h3>
+<h2>{{ health }}%</h2>
+</div>
+
+</div>
+
+<style>
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+</style>
+
+{% endblock %}

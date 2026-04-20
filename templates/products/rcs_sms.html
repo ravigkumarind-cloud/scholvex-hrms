@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>RCS SMS Solution</h1>
+<p>Rich Messaging for Schools & Colleges</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Rich Communication Messaging</h2>
+
+<p>
+ScholVex RCS SMS allows educational institutions to send 
+rich messages with images, buttons and interactive content 
+to parents and students.
+</p>
+
+<ul>
+<li>Rich Media Messages</li>
+<li>Images & Videos</li>
+<li>Interactive Buttons</li>
+<li>Branded Messages</li>
+<li>Delivery Tracking</li>
+<li>High Engagement</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/rcs-sms.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-image"></i>
+<h3>Image Messages</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-video"></i>
+<h3>Video Messages</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-hand-pointer"></i>
+<h3>Clickable Buttons</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-user-check"></i>
+<h3>Branded Sender</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-chart-line"></i>
+<h3>Analytics</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-comments"></i>
+<h3>Interactive Chat</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Upgrade to Rich Messaging</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>RFID Smart ID System</h1>
+<p>Automated Entry & Attendance Using Smart ID Cards</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>RFID Smart Campus Solution</h2>
+
+<p>
+ScholVex RFID System enables automated student 
+entry, attendance and parent notifications using 
+smart ID cards and RFID readers.
+</p>
+
+<ul>
+<li>RFID Smart ID Cards</li>
+<li>Automatic Gate Entry</li>
+<li>Student Attendance</li>
+<li>Parent SMS Alerts</li>
+<li>Bus Tracking Integration</li>
+<li>Visitor Management</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/rfid.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-id-card"></i>
+<h3>Smart ID Cards</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-door-open"></i>
+<h3>Gate Entry</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-user-check"></i>
+<h3>Auto Attendance</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-bell"></i>
+<h3>SMS Alerts</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-bus"></i>
+<h3>Bus Integration</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-shield"></i>
+<h3>Campus Security</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Upgrade to Smart Campus</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

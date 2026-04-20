@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- HERO -->
+<section class="contact-hero">
+<div class="container">
+<h1>Contact ScholVex Solutions</h1>
+<p>Corporate Office & Regional Support Centers</p>
+</div>
+</section>
+
+
+<!-- TOP ICONS -->
+<section class="contact-cards">
+<div class="container">
+
+<div class="contact-card-grid">
+
+<div class="contact-card">
+<i class="fa fa-building"></i>
+<h4>Head Office</h4>
+<p>Hyderabad, Telangana</p>
+</div>
+
+<div class="contact-card">
+<i class="fa fa-headset"></i>
+<h4>Support</h4>
+<p>Dedicated Helpdesk</p>
+</div>
+
+<div class="contact-card">
+<i class="fa fa-phone"></i>
+<h4>Call Us</h4>
+<p>+91 90000 00000</p>
+</div>
+
+<div class="contact-card">
+<i class="fa fa-envelope"></i>
+<h4>Email</h4>
+<p>support@scholvex.com</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+<div class="contact-grid">
+
+
+<!-- LEFT -->
+<div class="contact-info">
+
+<h3>Head Office</h3>
+<p>ScholVex Solutions Pvt Ltd</p>
+<p>Hyderabad, Telangana</p>
+<p>+91 90000 00000</p>
+<p>info@scholvex.com</p>
+
+
+<label>Hyderabad Branches</label>
+<select>
+<option>Miyapur</option>
+<option>Mehdipatnam</option>
+<option>Dilsukhnagar</option>
+<option>Secunderabad</option>
+<option>ECIL</option>
+</select>
+
+
+<label>Regional Offices</label>
+<select>
+<option>ECIL</option>
+<option>Medchal</option>
+<option>Patancheru</option>
+</select>
+
+
+<label>Telangana Districts</label>
+<select>
+<option>Adilabad</option>
+<option>Bhadradri Kothagudem</option>
+<option>Hanamkonda</option>
+<option>Hyderabad</option>
+<option>Jagtial</option>
+<option>Jangaon</option>
+<option>Jayashankar Bhupalpally</option>
+<option>Jogulamba Gadwal</option>
+<option>Kamareddy</option>
+<option>Karimnagar</option>
+<option>Khammam</option>
+<option>Komaram Bheem Asifabad</option>
+<option>Mahabubabad</option>
+<option>Mahabubnagar</option>
+<option>Mancherial</option>
+<option>Medak</option>
+<option>Medchal</option>
+<option>Mulugu</option>
+<option>Nagarkurnool</option>
+<option>Nalgonda</option>
+<option>Narayanpet</option>
+<option>Nirmal</option>
+<option>Nizamabad</option>
+<option>Peddapalli</option>
+<option>Rajanna Sircilla</option>
+<option>Rangareddy</option>
+<option>Sangareddy</option>
+<option>Siddipet</option>
+<option>Suryapet</option>
+<option>Vikarabad</option>
+<option>Wanaparthy</option>
+<option>Warangal</option>
+<option>Yadadri</option>
+</select>
+
+
+<label>Andhra Pradesh Districts</label>
+<select>
+<option>Alluri Sitharama Raju</option>
+<option>Anakapalli</option>
+<option>Anantapuramu</option>
+<option>Annamayya</option>
+<option>Bapatla</option>
+<option>Chittoor</option>
+<option>Dr B R Ambedkar Konaseema</option>
+<option>East Godavari</option>
+<option>Eluru</option>
+<option>Guntur</option>
+<option>Kakinada</option>
+<option>Krishna</option>
+<option>Kurnool</option>
+<option>Nandyal</option>
+<option>NTR</option>
+<option>Palnadu</option>
+<option>Parvathipuram Manyam</option>
+<option>Prakasam</option>
+<option>Sri Potti Sriramulu Nellore</option>
+<option>Sri Sathya Sai</option>
+<option>Srikakulam</option>
+<option>Tirupati</option>
+<option>Visakhapatnam</option>
+<option>Vizianagaram</option>
+<option>West Godavari</option>
+<option>YSR Kadapa</option>
+</select>
+
+</div>
+
+
+
+<!-- RIGHT -->
+<div class="contact-form">
+
+<h3>Send Enquiry</h3>
+
+<form method="POST" action="/contact-submit/">
+{% csrf_token %}
+
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="email" name="email" placeholder="Email Address" required>
+<input type="text" name="phone" placeholder="Phone Number">
+<input type="text" name="organization" placeholder="Organization Name">
+
+<textarea name="message" placeholder="Your Message"></textarea>
+
+<div class="contact-check">
+<input type="checkbox" required>
+<label>I agree to Terms & Conditions and Privacy Policy</label>
+</div>
+
+<button class="contact-btn">Submit Enquiry</button>
+
+</form>
+
+</div>
+
+</div>
+</section>
+
+
+
+<!-- MAP -->
+<section class="contact-map">
+<iframe 
+src="https://maps.google.com/maps?q=hyderabad&t=&z=12&ie=UTF8&iwloc=&output=embed">
+</iframe>
+</section>
+
+
+
+<!-- CTA -->
+<section class="contact-cta">
+<div class="container">
+
+<h2>Need Immediate Assistance?</h2>
+<p>Our team will contact you shortly</p>
+
+<a href="/contact/" class="btn-primary">
+Contact Support
+</a>
+
+</div>
+</section>
+
+{% endblock %}

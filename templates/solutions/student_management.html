@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Student Management</h1>
+<p>Complete Student Lifecycle Management</p>
+</div>
+</section>
+
+
+<section class="solution-detail">
+
+<div class="container solution-grid">
+
+<div class="solution-text">
+<h2>Student Information System</h2>
+
+<p>
+ScholVex Student Management solution helps institutions 
+manage student records, academics, attendance and 
+communication in one platform.
+</p>
+
+<ul>
+<li>Student Registration</li>
+<li>Student Records</li>
+<li>Academic Tracking</li>
+<li>Attendance Tracking</li>
+<li>Communication</li>
+<li>Performance Reports</li>
+</ul>
+
+</div>
+
+<div class="solution-image">
+<img src="{% static 'student.jpg' %}">
+</div>
+
+</div>
+
+</section>
+
+
+<section class="solution-features">
+
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-user-plus"></i>
+<h3>Registration</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-users"></i>
+<h3>Student Records</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-calendar-check"></i>
+<h3>Attendance</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-book"></i>
+<h3>Academics</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-chart-line"></i>
+<h3>Performance</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-bell"></i>
+<h3>Communication</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="solution-cta">
+
+<div class="container">
+<h2>Manage Students Efficiently</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Computer Lab Setup</h1>
+<p>Complete Computer Lab Infrastructure for Institutions</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Complete Computer Lab Solution</h2>
+
+<p>
+ScholVex provides end-to-end computer lab setup 
+including systems, networking, furniture and 
+software installation for schools and colleges.
+</p>
+
+<ul>
+<li>Desktop Systems</li>
+<li>Server Setup</li>
+<li>Networking Installation</li>
+<li>Lab Furniture</li>
+<li>Software Installation</li>
+<li>Complete Lab Deployment</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/computer-lab.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-computer"></i>
+<h3>Desktop Systems</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-server"></i>
+<h3>Server Setup</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-network-wired"></i>
+<h3>Networking</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-chair"></i>
+<h3>Lab Furniture</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-download"></i>
+<h3>Software Setup</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-school"></i>
+<h3>Complete Installation</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Setup Your Computer Lab</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

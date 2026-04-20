@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Leadership Team</h1>
+<p>Meet Our Management & Leadership</p>
+</div>
+</section>
+
+
+<section class="leadership-section">
+
+<div class="container">
+
+<h2 class="section-title">Management Team</h2>
+
+<div class="leadership-grid">
+
+<div class="leader-card">
+<img src="{% static 'team1.jpg' %}">
+<h3>Managing Director</h3>
+<p>Strategy & Vision</p>
+</div>
+
+<div class="leader-card">
+<img src="{% static 'team2.jpg' %}">
+<h3>Operations Head</h3>
+<p>Operations Management</p>
+</div>
+
+<div class="leader-card">
+<img src="{% static 'team3.jpg' %}">
+<h3>Technical Director</h3>
+<p>Technology & Development</p>
+</div>
+
+<div class="leader-card">
+<img src="{% static 'team4.jpg' %}">
+<h3>Marketing Head</h3>
+<p>Sales & Marketing</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Learning Management System</h1>
+<p>Online Learning Platform for Schools & Colleges</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Digital Learning Platform</h2>
+
+<p>
+ScholVex LMS provides complete online learning 
+with video classes, assignments, exams and 
+student performance tracking.
+</p>
+
+<ul>
+<li>Online Classes</li>
+<li>Video Lectures</li>
+<li>Assignments</li>
+<li>Online Exams</li>
+<li>Study Materials</li>
+<li>Performance Reports</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/lms.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-video"></i>
+<h3>Video Classes</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-book"></i>
+<h3>Study Materials</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-file"></i>
+<h3>Assignments</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-pen"></i>
+<h3>Online Exams</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-chart-line"></i>
+<h3>Performance Tracking</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-mobile"></i>
+<h3>Mobile Learning</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Start Digital Learning</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

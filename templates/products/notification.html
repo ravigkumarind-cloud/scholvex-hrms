@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Notification System</h1>
+<p>Instant Alerts & Notifications for Educational Institutions</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Smart Notification Platform</h2>
+
+<p>
+ScholVex Notification System enables schools and colleges 
+to send instant alerts to parents, students and staff 
+through multiple communication channels.
+</p>
+
+<ul>
+<li>Instant Alerts</li>
+<li>Push Notifications</li>
+<li>SMS Notifications</li>
+<li>WhatsApp Notifications</li>
+<li>Email Alerts</li>
+<li>App Notifications</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/notification.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-bell"></i>
+<h3>Instant Alerts</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-mobile"></i>
+<h3>Push Notifications</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-comment"></i>
+<h3>SMS Alerts</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa-brands fa-whatsapp"></i>
+<h3>WhatsApp Alerts</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-envelope"></i>
+<h3>Email Alerts</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-broadcast-tower"></i>
+<h3>Broadcast System</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Start Smart Notifications</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

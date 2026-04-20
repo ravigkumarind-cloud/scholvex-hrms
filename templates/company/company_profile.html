@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Company Profile</h1>
+<p>ScholVex Solutions Corporate Overview</p>
+</div>
+</section>
+
+
+<section class="profile-section">
+<div class="container profile-grid">
+
+<div class="profile-text">
+<h2>About ScholVex Solutions</h2>
+
+<p>
+ScholVex Solutions provides complete infrastructure solutions 
+for schools, colleges and educational institutions.
+</p>
+
+<p>
+We offer ERP software, biometric systems, CCTV, ID cards, 
+uniforms, digital marketing, staffing and admission support.
+</p>
+
+<ul>
+<li>ERP Software Solutions</li>
+<li>Institution Management</li>
+<li>Digital Infrastructure</li>
+<li>Staffing & Support</li>
+<li>Admission Growth Support</li>
+<li>Marketing Services</li>
+</ul>
+
+</div>
+
+<div class="profile-image">
+<img src="{% static 'company.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+
+<section class="profile-stats">
+
+<div class="container stats-grid">
+
+<div class="stat-box">
+<h3>500+</h3>
+<p>Institutions</p>
+</div>
+
+<div class="stat-box">
+<h3>35+</h3>
+<p>Products</p>
+</div>
+
+<div class="stat-box">
+<h3>25+</h3>
+<p>Services</p>
+</div>
+
+<div class="stat-box">
+<h3>150+</h3>
+<p>Team Members</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="profile-cta">
+
+<div class="container">
+<h2>Download Company Profile</h2>
+<p>Get complete company details</p>
+
+<a href="#" class="btn-primary">Download PDF</a>
+
+</div>
+
+</section>
+
+{% endblock %}

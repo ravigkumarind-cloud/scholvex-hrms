@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Security Department Dashboard</h2>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Guards</h3>
+<h2>{{ guards }}</h2>
+</div>
+
+<div class="card">
+<h3>On Duty</h3>
+<h2>{{ duty }}</h2>
+</div>
+
+<div class="card">
+<h3>Off Duty</h3>
+<h2>{{ off }}</h2>
+</div>
+
+<div class="card">
+<h3>Night Shift</h3>
+<h2>{{ night }}</h2>
+</div>
+
+</div>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Incidents</h3>
+<h2>{{ incidents }}</h2>
+</div>
+
+<div class="card">
+<h3>Visitors Today</h3>
+<h2>{{ visitors }}</h2>
+</div>
+
+<div class="card">
+<h3>Entries</h3>
+<h2>{{ entries }}</h2>
+</div>
+
+<div class="card">
+<h3>Exits</h3>
+<h2>{{ exits }}</h2>
+</div>
+
+</div>
+
+<style>
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+</style>
+
+{% endblock %}

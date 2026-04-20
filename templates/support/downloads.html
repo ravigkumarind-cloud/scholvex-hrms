@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="page-hero">
+<div class="container">
+<h1>Software Downloads</h1>
+<p>Download ScholVex Applications & Tools</p>
+</div>
+</section>
+
+
+<!-- INTRO -->
+<section class="page-info">
+<div class="container page-info-grid">
+
+<div>
+<h2>Software Downloads</h2>
+
+<p>
+Download ScholVex software applications,
+tools and utilities for institutions.
+</p>
+
+<p>
+Install required software for ERP, mobile apps 
+and technical integrations.
+</p>
+
+<ul>
+<li>ERP Software</li>
+<li>Mobile Applications</li>
+<li>Biometric Software</li>
+<li>Communication Tools</li>
+<li>Remote Support Tools</li>
+<li>Utility Applications</li>
+</ul>
+</div>
+
+<div>
+<img src="{% static 'support/download.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+
+<!-- DOWNLOADS -->
+<section class="downloads-section">
+<div class="container">
+
+<h2 class="section-title">Available Downloads</h2>
+
+<div class="downloads-grid">
+
+<div class="download-card">
+<i class="fa fa-school"></i>
+<h3>School ERP</h3>
+<a href="#">Download</a>
+</div>
+
+<div class="download-card">
+<i class="fa fa-university"></i>
+<h3>College ERP</h3>
+<a href="#">Download</a>
+</div>
+
+<div class="download-card">
+<i class="fa fa-mobile-alt"></i>
+<h3>Mobile App</h3>
+<a href="#">Download</a>
+</div>
+
+<div class="download-card">
+<i class="fa fa-fingerprint"></i>
+<h3>Biometric Software</h3>
+<a href="#">Download</a>
+</div>
+
+<div class="download-card">
+<i class="fa fa-desktop"></i>
+<h3>Remote Support Tool</h3>
+<a href="#">Download</a>
+</div>
+
+<div class="download-card">
+<i class="fa fa-comments"></i>
+<h3>Communication Tool</h3>
+<a href="#">Download</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+
+<!-- CTA -->
+<section class="page-cta">
+<div class="container">
+<h2>Need Installation Help?</h2>
+<p>Our team will assist you</p>
+<a href="/contact/" class="btn-primary">Request Support</a>
+</div>
+</section>
+
+{% endblock %}

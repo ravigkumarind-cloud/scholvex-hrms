@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="page-hero" 
+style="background:url('{% static 'support/scholvex-user-manual-banner.jpg' %}') center/cover no-repeat;">
+<div class="container">
+<h1>User Manuals</h1>
+<p>Download Product User Guides</p>
+</div>
+</section>
+
+<!-- INTRO -->
+<section class="page-info">
+<div class="container page-info-grid">
+
+<div>
+<h2>Product User Manuals</h2>
+
+<p>
+ScholVex provides user manuals for software,
+products and services for institutions.
+</p>
+
+<p>
+Download guides to understand system usage,
+configuration and features.
+</p>
+
+<ul>
+<li>ERP User Manual</li>
+<li>Mobile App Guide</li>
+<li>Biometric Manual</li>
+<li>CCTV Setup Guide</li>
+<li>Communication Guide</li>
+<li>Admin User Guide</li>
+</ul>
+</div>
+
+<div>
+<img src="{% static 'support/manual.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+
+<!-- DOWNLOAD LIST -->
+<section class="downloads-section">
+<div class="container">
+
+<h2 class="section-title">Download Manuals</h2>
+
+<div class="downloads-grid">
+
+<div class="download-card">
+<i class="fa fa-file-pdf"></i>
+<h3>School ERP Manual</h3>
+<a href="#">Download</a>
+</div>
+
+<div class="download-card">
+<i class="fa fa-file-pdf"></i>
+<h3>College ERP Manual</h3>
+<a href="#">Download</a>
+</div>
+
+<div class="download-card">
+<i class="fa fa-file-pdf"></i>
+<h3>Mobile App Manual</h3>
+<a href="#">Download</a>
+</div>
+
+<div class="download-card">
+<i class="fa fa-file-pdf"></i>
+<h3>Biometric Manual</h3>
+<a href="#">Download</a>
+</div>
+
+<div class="download-card">
+<i class="fa fa-file-pdf"></i>
+<h3>CCTV Manual</h3>
+<a href="#">Download</a>
+</div>
+
+<div class="download-card">
+<i class="fa fa-file-pdf"></i>
+<h3>Communication Manual</h3>
+<a href="#">Download</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+
+<!-- CTA -->
+<section class="page-cta">
+<div class="container">
+<h2>Need Help?</h2>
+<p>Contact support team</p>
+<a href="/contact/" class="btn-primary">Contact Support</a>
+</div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>CCTV Surveillance System</h1>
+<p>Complete Campus Security Monitoring Solution</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Smart Campus Security</h2>
+
+<p>
+ScholVex CCTV Surveillance System provides complete 
+campus monitoring with HD cameras, remote viewing 
+and recording features for educational institutions.
+</p>
+
+<ul>
+<li>HD CCTV Cameras</li>
+<li>Indoor & Outdoor Cameras</li>
+<li>Remote Mobile Viewing</li>
+<li>Recording & Playback</li>
+<li>Night Vision</li>
+<li>Central Monitoring</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/cctv.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-video"></i>
+<h3>HD Cameras</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-eye"></i>
+<h3>Live Monitoring</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-mobile"></i>
+<h3>Mobile Viewing</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-clock"></i>
+<h3>24/7 Recording</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-moon"></i>
+<h3>Night Vision</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-server"></i>
+<h3>Central Control</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Secure Your Campus Today</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

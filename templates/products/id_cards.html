@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>School ID Cards</h1>
+<p>Professional ID Card Solutions for Educational Institutions</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Student & Staff ID Cards</h2>
+
+<p>
+ScholVex provides high-quality ID cards for schools 
+and colleges with smart design, barcode, RFID and 
+durable printing options.
+</p>
+
+<ul>
+<li>Student ID Cards</li>
+<li>Staff ID Cards</li>
+<li>Barcode ID Cards</li>
+<li>RFID Smart Cards</li>
+<li>Lanyards & Holders</li>
+<li>Durable Printing</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/id-cards.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-id-card"></i>
+<h3>Student ID Cards</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-user"></i>
+<h3>Staff ID Cards</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-barcode"></i>
+<h3>Barcode Cards</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-microchip"></i>
+<h3>RFID Cards</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-print"></i>
+<h3>HD Printing</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-shield"></i>
+<h3>Durable Quality</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Order ID Cards Today</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

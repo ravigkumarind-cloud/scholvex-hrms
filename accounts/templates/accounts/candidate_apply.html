@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="login-section">
+<div class="login-box">
+
+<h2>Apply for {{ job_title }}</h2>
+<p>{{ department }} | {{ location }}</p>
+
+{% if existing %}
+<p style="color:#0B2C5F;">
+You already applied for this role. Submitting again will update your details.
+</p>
+{% endif %}
+
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+
+<textarea name="cover_letter" placeholder="Short cover letter / experience summary" rows="6">{% if existing %}{{ existing.cover_letter }}{% endif %}</textarea>
+<input type="file" name="resume" accept=".pdf,.doc,.docx">
+
+<button class="btn-primary">Submit Application</button>
+
+</form>
+
+<p style="margin-top:15px;">
+<a href="{% url 'candidate_dashboard' %}">Go to Dashboard</a>
+</p>
+
+</div>
+</section>
+
+{% endblock %}

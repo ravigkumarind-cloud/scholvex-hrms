@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Solar Power Solution</h1>
+<p>Smart Solar Energy Solution for Educational Institutions</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Campus Solar Power System</h2>
+
+<p>
+ScholVex Solar Power Solution helps schools and colleges 
+reduce electricity costs with reliable solar energy systems 
+designed for campuses.
+</p>
+
+<ul>
+<li>Rooftop Solar Panels</li>
+<li>Grid Connected System</li>
+<li>Battery Backup</li>
+<li>Energy Monitoring</li>
+<li>Low Maintenance</li>
+<li>Government Subsidy Support</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/solar.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-solar-panel"></i>
+<h3>Solar Panels</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-bolt"></i>
+<h3>Power Generation</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-battery-full"></i>
+<h3>Battery Backup</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-chart-line"></i>
+<h3>Energy Monitoring</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-leaf"></i>
+<h3>Eco Friendly</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-coins"></i>
+<h3>Cost Saving</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Switch to Solar Energy</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

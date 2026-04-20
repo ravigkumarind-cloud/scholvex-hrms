@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>PRO Department Dashboard</h2>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Campaigns</h3>
+<h2>{{ campaigns }}</h2>
+</div>
+
+<div class="card">
+<h3>Leads</h3>
+<h2>{{ leads }}</h2>
+</div>
+
+<div class="card">
+<h3>Events</h3>
+<h2>{{ events }}</h2>
+</div>
+
+<div class="card">
+<h3>Meetings</h3>
+<h2>{{ meetings }}</h2>
+</div>
+
+</div>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Press Releases</h3>
+<h2>{{ press }}</h2>
+</div>
+
+<div class="card">
+<h3>Social Media Posts</h3>
+<h2>{{ posts }}</h2>
+</div>
+
+<div class="card">
+<h3>Brand Score</h3>
+<h2>{{ brand }}%</h2>
+</div>
+
+<div class="card">
+<h3>Conversions</h3>
+<h2>{{ conversions }}</h2>
+</div>
+
+</div>
+
+<style>
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+</style>
+
+{% endblock %}

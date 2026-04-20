@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Bulk SMS Solution</h1>
+<p>Instant Communication with Students & Parents</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Educational Bulk SMS Platform</h2>
+
+<p>
+ScholVex Bulk SMS solution enables schools and colleges 
+to send instant notifications to parents, students and staff.
+</p>
+
+<ul>
+<li>Attendance Alerts</li>
+<li>Fee Reminders</li>
+<li>Exam Notifications</li>
+<li>Holiday Messages</li>
+<li>Emergency Alerts</li>
+<li>Instant Communication</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/bulk-sms.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-comment"></i>
+<h3>Instant SMS</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-users"></i>
+<h3>Group Messaging</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-bell"></i>
+<h3>Alerts & Notifications</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-clock"></i>
+<h3>Scheduled SMS</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-chart-line"></i>
+<h3>Delivery Reports</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-mobile"></i>
+<h3>API Integration</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Start Bulk Communication</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

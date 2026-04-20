@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="page-hero">
+<div class="container">
+<h1>Documentation</h1>
+<p>Technical & Product Documentation</p>
+</div>
+</section>
+
+
+<!-- INTRO -->
+<section class="page-info">
+<div class="container page-info-grid">
+
+<div>
+<h2>Product Documentation</h2>
+
+<p>
+ScholVex provides complete documentation 
+for software, services and technical setup.
+</p>
+
+<p>
+Institutions can refer documentation for 
+implementation and usage.
+</p>
+
+<ul>
+<li>ERP documentation</li>
+<li>Integration guide</li>
+<li>API documentation</li>
+<li>Installation guide</li>
+<li>Configuration guide</li>
+<li>Technical reference</li>
+</ul>
+</div>
+
+<div>
+<img src="{% static 'support/docs.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+
+<!-- DOCUMENTATION LIST -->
+<section class="downloads-section">
+<div class="container">
+
+<h2 class="section-title">Available Documentation</h2>
+
+<div class="downloads-grid">
+
+<div class="download-card">
+<i class="fa fa-file-alt"></i>
+<h3>ERP Documentation</h3>
+<a href="#">View</a>
+</div>
+
+<div class="download-card">
+<i class="fa fa-code"></i>
+<h3>API Documentation</h3>
+<a href="#">View</a>
+</div>
+
+<div class="download-card">
+<i class="fa fa-download"></i>
+<h3>Installation Guide</h3>
+<a href="#">View</a>
+</div>
+
+<div class="download-card">
+<i class="fa fa-cogs"></i>
+<h3>Configuration Guide</h3>
+<a href="#">View</a>
+</div>
+
+<div class="download-card">
+<i class="fa fa-user-cog"></i>
+<h3>Admin Guide</h3>
+<a href="#">View</a>
+</div>
+
+<div class="download-card">
+<i class="fa fa-tools"></i>
+<h3>Technical Guide</h3>
+<a href="#">View</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+
+<!-- CTA -->
+<section class="page-cta">
+<div class="container">
+<h2>Need Technical Help?</h2>
+<p>Contact our technical team</p>
+<a href="/contact/" class="btn-primary">Contact Support</a>
+</div>
+</section>
+
+{% endblock %}

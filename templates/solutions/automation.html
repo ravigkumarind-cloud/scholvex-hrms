@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Automation Solution</h1>
+<p>Complete Institutional Automation</p>
+</div>
+</section>
+
+
+<section class="solution-detail">
+
+<div class="container solution-grid">
+
+<div class="solution-text">
+<h2>Institution Workflow Automation</h2>
+
+<p>
+ScholVex Automation Solution helps institutions automate 
+daily operations including attendance, communication, 
+fees and administration.
+</p>
+
+<ul>
+<li>Attendance Automation</li>
+<li>Fee Automation</li>
+<li>Admission Workflow</li>
+<li>Staff Workflow</li>
+<li>Notification Automation</li>
+<li>Report Generation</li>
+</ul>
+
+</div>
+
+<div class="solution-image">
+<img src="{% static 'automation.jpg' %}">
+</div>
+
+</div>
+
+</section>
+
+
+<section class="solution-features">
+
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-gears"></i>
+<h3>Workflow Automation</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-calendar-check"></i>
+<h3>Attendance Auto</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-money-bill"></i>
+<h3>Fee Automation</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-user-plus"></i>
+<h3>Admission Auto</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-bell"></i>
+<h3>Notifications</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-chart-line"></i>
+<h3>Reports</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="solution-cta">
+
+<div class="container">
+<h2>Automate Your Institution</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+
+</section>
+
+{% endblock %}

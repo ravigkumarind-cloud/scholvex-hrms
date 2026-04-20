@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>My Salary</h2>
+
+<br>
+
+<div style="background:white;padding:20px;border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+
+<table style="width:100%;border-collapse:collapse;">
+
+<tr style="background:#f4f6fb;text-align:left;">
+<th style="padding:12px;">Month</th>
+<th style="padding:12px;">Basic</th>
+<th style="padding:12px;">HRA</th>
+<th style="padding:12px;">Bonus</th>
+<th style="padding:12px;">Deduction</th>
+<th style="padding:12px;">Net Salary</th>
+<th style="padding:12px;">Payslip</th>
+</tr>
+
+{% for p in payroll %}
+
+<tr style="border-top:1px solid #eee;">
+
+<td style="padding:10px;">{{ p.month }}</td>
+<td style="padding:10px;">{{ p.basic }}</td>
+<td style="padding:10px;">{{ p.hra }}</td>
+<td style="padding:10px;">{{ p.bonus }}</td>
+<td style="padding:10px;">{{ p.deduction }}</td>
+
+<td style="padding:10px;">
+<b>
+{{ p.basic|add:p.hra|add:p.bonus|add:-p.deduction }}
+</b>
+</td>
+
+<td style="padding:10px;">
+
+<a href="/employees/payslip/{{ p.id }}/"
+style="background:#0f1e2e;color:white;
+padding:6px 12px;border-radius:5px;text-decoration:none;">
+Download
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

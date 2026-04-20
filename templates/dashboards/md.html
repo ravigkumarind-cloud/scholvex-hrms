@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Managing Director</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f5f7fb;
+}
+
+/* sidebar */
+
+.sidebar{
+width:250px;
+height:100vh;
+background:#0f1e2e;
+color:white;
+position:fixed;
+}
+
+.logo{
+padding:20px;
+text-align:center;
+border-bottom:1px solid #1f3a5f;
+}
+
+.logo img{
+height:50px;
+}
+
+.menu{
+padding:20px;
+}
+
+.menu a{
+display:block;
+color:white;
+padding:12px;
+text-decoration:none;
+margin-bottom:5px;
+border-radius:5px;
+}
+
+.menu a:hover{
+background:#1f3a5f;
+}
+
+/* main */
+
+.main{
+margin-left:250px;
+padding:30px;
+}
+
+/* cards */
+
+.cards{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.card{
+background:white;
+padding:20px;
+width:220px;
+border-radius:8px;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.card h3{
+margin:0;
+color:#0f1e2e;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+<img src="{% static 'logo.png' %}">
+<h3>Managing Director</h3>
+</div>
+
+<div class="menu">
+
+<a href="#">Dashboard</a>
+<a href="/employees/">Employees</a>
+<a href="/employees/add/">Add Employee</a>
+<a href="/employees/attendance-report/">Attendance</a>
+<a href="/employees/leaves/">Leaves</a>
+<a href="/employees/payroll/">Payroll</a>
+<a href="#">Directors</a>
+<a href="#">Department Heads</a>
+<a href="/logout/">Logout</a>
+
+</div>
+
+</div>
+
+<div class="main">
+
+<h2>Managing Director Dashboard</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Employees</h3>
+<p>All Employees</p>
+</div>
+
+<div class="card">
+<h3>Directors</h3>
+<p>Manage Directors</p>
+</div>
+
+<div class="card">
+<h3>Departments</h3>
+<p>Department Heads</p>
+</div>
+
+<div class="card">
+<h3>Payroll</h3>
+<p>Salary Management</p>
+</div>
+
+<div class="card">
+<h3>Attendance</h3>
+<p>Track Attendance</p>
+</div>
+
+<div class="card">
+<h3>Leaves</h3>
+<p>Approve Leaves</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

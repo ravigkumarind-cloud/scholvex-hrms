@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>All Printing Works</h1>
+<p>Complete Printing Solutions for Educational Institutions</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Institution Printing Services</h2>
+
+<p>
+ScholVex provides complete printing solutions for schools 
+and colleges including stationery, marketing materials 
+and institutional printing works.
+</p>
+
+<ul>
+<li>Prospectus Printing</li>
+<li>Admission Forms</li>
+<li>Letter Heads</li>
+<li>Brochures & Flyers</li>
+<li>School Stationery</li>
+<li>Custom Printing</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/printing.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-print"></i>
+<h3>HD Printing</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-file"></i>
+<h3>Custom Design</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-book"></i>
+<h3>Institution Materials</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-school"></i>
+<h3>School Branding</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-layer-group"></i>
+<h3>Bulk Printing</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-box"></i>
+<h3>On-time Delivery</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Get Printing Quotation</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

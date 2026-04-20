@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>College Digital Solution</h1>
+<p>Complete Digital Infrastructure for Colleges</p>
+</div>
+</section>
+
+
+<section class="solution-detail">
+
+<div class="container solution-grid">
+
+<div class="solution-text">
+<h2>College Automation System</h2>
+
+<p>
+ScholVex College Digital Solution helps colleges manage 
+academics, admissions, attendance, communication and 
+administration digitally.
+</p>
+
+<ul>
+<li>Admission Management</li>
+<li>Student Records</li>
+<li>Attendance System</li>
+<li>Fee Management</li>
+<li>Exam Management</li>
+<li>Faculty Management</li>
+</ul>
+
+</div>
+
+<div class="solution-image">
+<img src="{% static 'college.jpg' %}">
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="solution-features">
+
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-user-graduate"></i>
+<h3>Admission Management</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-users"></i>
+<h3>Student Records</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-calendar-check"></i>
+<h3>Attendance</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-money-bill"></i>
+<h3>Fee Management</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-file"></i>
+<h3>Exam Management</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-chalkboard-teacher"></i>
+<h3>Faculty Management</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="solution-cta">
+
+<div class="container">
+<h2>Request Demo</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+
+</section>
+
+{% endblock %}

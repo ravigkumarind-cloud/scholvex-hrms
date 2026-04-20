@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScholVex Login</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI;
+background:linear-gradient(135deg,#0B2C5F,#1e4fa3);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.login-box{
+background:white;
+padding:40px;
+width:400px;
+box-shadow:0 15px 40px rgba(0,0,0,.2);
+border-radius:8px;
+}
+
+.logo{
+text-align:center;
+margin-bottom:20px;
+}
+
+.logo img{
+height:60px;
+}
+
+h2{
+text-align:center;
+color:#0B2C5F;
+}
+
+select,input{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:1px solid #ddd;
+border-radius:4px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:20px;
+background:#0B2C5F;
+color:white;
+border:none;
+font-size:15px;
+border-radius:4px;
+}
+
+button:hover{
+background:#1e4fa3;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<div class="logo">
+<img src="{% static 'logo.png' %}">
+</div>
+
+<h2>ScholVex Login</h2>
+
+<form method="POST">
+{% csrf_token %}
+
+<!-- Login Type -->
+<select id="loginType" name="login_type" onchange="showDepartment()">
+<option value="">Select Login Type</option>
+<option value="staff">Staff</option>
+<option value="partner">Channel Partner</option>
+</select>
+
+<!-- Department -->
+<select id="department" name="department" onchange="showRole()" style="display:none;">
+<option value="">Select Department</option>
+
+<option value="management">Management</option>
+<option value="hr">HR</option>
+<option value="marketing">Marketing</option>
+<option value="technical">Technical</option>
+<option value="accounts">Accounts</option>
+<option value="bpo">BPO</option>
+<option value="production">Production</option>
+<option value="legal">Legal</option>
+<option value="security">Security</option>
+
+</select>
+
+<!-- Role -->
+<select id="role" name="role" style="display:none;">
+</select>
+
+<input type="text" name="username" placeholder="Username">
+<input type="password" name="password" placeholder="Password">
+
+<button type="submit">Login</button>
+
+</form>
+
+</div>
+
+<script>
+
+function showDepartment(){
+var type=document.getElementById("loginType").value;
+var dept=document.getElementById("department");
+
+if(type=="staff"){
+dept.style.display="block";
+}else{
+dept.style.display="none";
+}
+}
+
+function showRole(){
+
+var dept=document.getElementById("department").value;
+var role=document.getElementById("role");
+
+role.style.display="block";
+
+if(dept=="management"){
+role.innerHTML=`
+<option>Chairman</option>
+<option>Managing Director</option>
+<option>Director</option>
+<option>General Manager</option>
+`;
+}
+
+if(dept=="hr"){
+role.innerHTML=`
+<option>HR Head</option>
+<option>HR Manager</option>
+<option>HR Executive</option>
+`;
+}
+
+if(dept=="marketing"){
+role.innerHTML=`
+<option>Marketing Head</option>
+<option>Regional Manager</option>
+<option>Branch Manager</option>
+<option>Team Leader</option>
+<option>Marketing Executive</option>
+`;
+}
+
+if(dept=="technical"){
+role.innerHTML=`
+<option>Technical Head</option>
+<option>Developer</option>
+<option>Support Engineer</option>
+`;
+}
+
+if(dept=="accounts"){
+role.innerHTML=`
+<option>CFO</option>
+<option>Account Manager</option>
+<option>Account Executive</option>
+`;
+}
+
+if(dept=="bpo"){
+role.innerHTML=`
+<option>BPO Manager</option>
+<option>BPO Executive</option>
+`;
+}
+
+if(dept=="production"){
+role.innerHTML=`
+<option>Production Manager</option>
+<option>Production Staff</option>
+`;
+}
+
+if(dept=="legal"){
+role.innerHTML=`
+<option>Legal Head</option>
+<option>Advocate</option>
+`;
+}
+
+if(dept=="security"){
+role.innerHTML=`
+<option>Security Head</option>
+<option>Security Officer</option>
+`;
+}
+
+}
+
+</script>
+
+</body>
+</html>

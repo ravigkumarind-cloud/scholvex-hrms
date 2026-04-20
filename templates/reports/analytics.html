@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Analytics Dashboard</h2>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Employees</h3>
+<h2>{{ total }}</h2>
+</div>
+
+<div class="card">
+<h3>Present</h3>
+<h2>{{ present }}</h2>
+</div>
+
+<div class="card">
+<h3>Absent</h3>
+<h2>{{ absent }}</h2>
+</div>
+
+<div class="card">
+<h3>Leaves</h3>
+<h2>{{ leaves }}</h2>
+</div>
+
+</div>
+
+<br><br>
+
+<div class="chart-box">
+<h3>Department Employees</h3>
+
+<canvas id="deptChart"></canvas>
+
+</div>
+
+<br>
+
+<div class="chart-box">
+<h3>Attendance Overview</h3>
+
+<canvas id="attendanceChart"></canvas>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+var ctx = document.getElementById('deptChart');
+
+new Chart(ctx, {
+type: 'bar',
+data: {
+labels: {{ dept_labels|safe }},
+datasets: [{
+label: 'Employees',
+data: {{ dept_data|safe }},
+borderWidth:1
+}]
+}
+});
+
+
+
+var ctx2 = document.getElementById('attendanceChart');
+
+new Chart(ctx2, {
+type: 'pie',
+data: {
+labels: ['Present','Absent','Leave'],
+datasets: [{
+data: [{{ present }},{{ absent }},{{ leaves }}]
+}]
+}
+});
+
+</script>
+
+<style>
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.chart-box{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+</style>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Edit Employee</h2>
+
+<br>
+
+<div style="background:white;padding:25px;border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);width:700px;">
+
+<form method="POST" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;">
+
+<div>
+<label>Name</label>
+<input type="text" name="name" value="{{ employee.name }}" class="form">
+</div>
+
+<div>
+<label>Email</label>
+<input type="email" name="email" value="{{ employee.email }}" class="form">
+</div>
+
+<div>
+<label>Department</label>
+<input type="text" name="department" value="{{ employee.department }}" class="form">
+</div>
+
+<div>
+<label>Designation</label>
+<input type="text" name="designation" value="{{ employee.designation }}" class="form">
+</div>
+
+<div>
+<label>Salary</label>
+<input type="number" name="salary" value="{{ employee.salary }}" class="form">
+</div>
+
+<div>
+<label>Joining Date</label>
+<input type="date" name="joining_date" value="{{ employee.joining_date|date:'Y-m-d' }}" class="form">
+</div>
+
+<div>
+<label>Phone</label>
+<input type="text" name="phone" value="{{ employee.phone }}" class="form">
+</div>
+
+<div>
+<label>Change Photo</label>
+<input type="file" name="photo" class="form">
+</div>
+
+</div>
+
+<br>
+
+<button type="submit" class="btn">Update Employee</button>
+
+</form>
+
+</div>
+
+<style>
+
+.form{
+width:100%;
+padding:10px;
+border-radius:6px;
+border:1px solid #ddd;
+margin-top:5px;
+}
+
+.btn{
+background:#0f1e2e;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.btn:hover{
+background:#d4af37;
+color:black;
+}
+
+</style>
+
+{% endblock %}

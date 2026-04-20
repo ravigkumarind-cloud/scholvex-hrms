@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>School Notebooks</h1>
+<p>Customized Notebooks for Schools & Colleges</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Custom Printed Notebooks</h2>
+
+<p>
+ScholVex provides high quality notebooks with school 
+branding, custom covers and premium paper for 
+students of all classes.
+</p>
+
+<ul>
+<li>Custom Cover Design</li>
+<li>School Logo Printing</li>
+<li>Premium Quality Paper</li>
+<li>Different Sizes</li>
+<li>Subject Wise Notebooks</li>
+<li>Bulk Supply</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/notebooks.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-book"></i>
+<h3>Premium Paper</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-palette"></i>
+<h3>Custom Covers</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-school"></i>
+<h3>School Branding</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-layer-group"></i>
+<h3>Multiple Sizes</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-print"></i>
+<h3>Quality Printing</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-box"></i>
+<h3>Bulk Supply</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Order School Notebooks</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

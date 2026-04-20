@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Biometric Attendance System</h1>
+<p>Automated Staff & Student Attendance Solution</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Smart Attendance Automation</h2>
+
+<p>
+ScholVex Biometric Attendance System helps schools and 
+colleges automate attendance with fingerprint, face 
+recognition and RFID integration.
+</p>
+
+<ul>
+<li>Fingerprint Attendance</li>
+<li>Face Recognition</li>
+<li>Staff Attendance</li>
+<li>Student Attendance</li>
+<li>Payroll Integration</li>
+<li>Reports & Analytics</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/biometric.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-fingerprint"></i>
+<h3>Fingerprint Device</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-user-check"></i>
+<h3>Face Recognition</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-users"></i>
+<h3>Staff Attendance</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-user-graduate"></i>
+<h3>Student Attendance</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-file"></i>
+<h3>Reports</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-money-bill"></i>
+<h3>Payroll Integration</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Request Biometric Demo</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

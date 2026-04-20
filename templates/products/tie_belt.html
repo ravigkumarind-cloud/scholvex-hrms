@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>School Tie & Belt</h1>
+<p>Custom Designed School Tie and Belt Solutions</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Premium Tie & Belt Supply</h2>
+
+<p>
+ScholVex provides high-quality school ties and belts 
+with custom logos, colors and durable materials 
+for schools and colleges.
+</p>
+
+<ul>
+<li>School Tie</li>
+<li>School Belt</li>
+<li>Custom Logo Design</li>
+<li>Durable Fabric</li>
+<li>Bulk Supply</li>
+<li>Matching Uniform Sets</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/tie-belt.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-user-tie"></i>
+<h3>Custom Tie Design</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-circle"></i>
+<h3>School Logo Belt</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-palette"></i>
+<h3>Custom Colors</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-shield"></i>
+<h3>Durable Material</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-box"></i>
+<h3>Bulk Supply</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-award"></i>
+<h3>Premium Quality</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Order Tie & Belt</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Report Card Printing</h1>
+<p>Custom Designed Report Cards for Schools</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>School Report Cards</h2>
+
+<p>
+ScholVex provides professionally designed report cards 
+for schools with grading formats, branding and 
+high quality printing.
+</p>
+
+<ul>
+<li>School Report Cards</li>
+<li>Progress Cards</li>
+<li>Custom Grading Format</li>
+<li>Logo & Branding</li>
+<li>High Quality Printing</li>
+<li>Bulk Supply</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/report-cards.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-file"></i>
+<h3>Custom Format</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-school"></i>
+<h3>School Branding</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-chart-line"></i>
+<h3>Grading System</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-print"></i>
+<h3>Quality Printing</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-book"></i>
+<h3>Multiple Designs</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-box"></i>
+<h3>Bulk Supply</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Order Report Cards</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="page-hero">
+<div class="container">
+<h1>Track Support Ticket</h1>
+<p>Check Ticket Status & Updates</p>
+</div>
+</section>
+
+
+<!-- INTRO -->
+<section class="page-info">
+<div class="container page-info-grid">
+
+<div>
+<h2>Track Your Support Request</h2>
+
+<p>
+Institutions can track their support tickets 
+and monitor issue resolution status.
+</p>
+
+<p>
+Enter ticket ID or registered phone number 
+to check current progress.
+</p>
+
+<ul>
+<li>Track ticket status</li>
+<li>View updates</li>
+<li>Check resolution progress</li>
+<li>Support team details</li>
+<li>Estimated resolution time</li>
+<li>Service history</li>
+</ul>
+</div>
+
+<div>
+<img src="{% static 'support/track.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+
+<!-- TRACK FORM -->
+<section class="ticket-section">
+<div class="container">
+
+<h2 class="section-title">Track Ticket</h2>
+
+<form method="POST" action="/track-ticket/">
+{% csrf_token %}
+
+<div class="ticket-grid">
+
+<input type="text" name="ticket_id" placeholder="Enter Ticket ID (SVX-XXXX)" required>
+<input type="text" name="phone" placeholder="Registered Phone Number">
+
+<button type="submit" class="btn-primary">Track Ticket</button>
+
+</div>
+
+</form>
+
+</div>
+</section>
+
+
+
+<!-- RESULT -->
+{% if ticket %}
+<section class="ticket-result">
+<div class="container">
+
+<h2>Ticket Details</h2>
+
+<div class="ticket-box">
+
+<p><strong>Ticket ID:</strong> {{ ticket.ticket_id }}</p>
+<p><strong>Name:</strong> {{ ticket.name }}</p>
+<p><strong>Product:</strong> {{ ticket.product }}</p>
+<p><strong>Priority:</strong> {{ ticket.priority }}</p>
+<p><strong>Status:</strong> {{ ticket.status }}</p>
+<p><strong>Message:</strong> {{ ticket.message }}</p>
+
+</div>
+
+</div>
+</section>
+{% endif %}
+
+
+
+<!-- CTA -->
+<section class="page-cta">
+<div class="container">
+<h2>Need Help?</h2>
+<p>Contact support team</p>
+<a href="/contact/" class="btn-primary">Contact Support</a>
+</div>
+</section>
+
+{% endblock %}

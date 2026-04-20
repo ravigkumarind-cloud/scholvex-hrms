@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-header">
+<div class="container">
+<h1>Chairman Message</h1>
+</div>
+</section>
+
+
+<section class="section">
+<div class="container chairman-grid">
+
+<div class="chairman-image">
+<img src="{% static 'chairman.jpg' %}">
+</div>
+
+<div class="chairman-content">
+
+<h2>Message from Chairman</h2>
+
+<p>
+At Scholvex Solutions, our vision is to empower institutions through 
+innovative digital technology. We believe education and organizations 
+must evolve with modern automation and smart management systems.
+</p>
+
+<p>
+Our goal is to provide complete ERP solutions, communication tools 
+and digital infrastructure that simplify operations and improve 
+productivity.
+</p>
+
+<p>
+We are committed to delivering reliable, scalable and user-friendly 
+solutions for schools, colleges and enterprises across India.
+</p>
+
+<p>
+Together, we aim to transform the future with technology.
+</p>
+
+<h4>Chairman</h4>
+<p>Scholvex Solutions Pvt Ltd</p>
+
+</div>
+
+</div>
+</section>
+
+
+<style>
+
+.page-header{
+background:#0B2C5F;
+color:white;
+padding:80px 20px;
+text-align:center;
+}
+
+.section{
+padding:70px 20px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+}
+
+.chairman-grid{
+display:grid;
+grid-template-columns:350px 1fr;
+gap:40px;
+align-items:center;
+}
+
+.chairman-image img{
+width:100%;
+border-radius:4px;
+}
+
+.chairman-content h2{
+margin-bottom:15px;
+}
+
+.chairman-content p{
+line-height:26px;
+margin-bottom:12px;
+}
+
+@media(max-width:768px){
+
+.chairman-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+{% endblock %}

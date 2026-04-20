@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>School Uniforms</h1>
+<p>High Quality School & College Uniform Supply</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Complete Uniform Solutions</h2>
+
+<p>
+ScholVex provides premium quality uniforms for schools 
+and colleges with custom design, stitching and bulk supply.
+</p>
+
+<ul>
+<li>School Uniforms</li>
+<li>College Uniforms</li>
+<li>Sports Uniforms</li>
+<li>House T-Shirts</li>
+<li>Custom Design</li>
+<li>Bulk Supply</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/uniforms.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-shirt"></i>
+<h3>Premium Fabric</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-ruler"></i>
+<h3>Perfect Fitting</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-palette"></i>
+<h3>Custom Design</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-box"></i>
+<h3>Bulk Supply</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-truck"></i>
+<h3>On-time Delivery</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-award"></i>
+<h3>Quality Assured</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Get Uniform Quotation</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

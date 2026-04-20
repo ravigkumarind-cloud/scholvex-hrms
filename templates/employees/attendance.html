@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Attendance</h2>
+
+<br>
+
+<div style="background:white;padding:25px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.05);width:500px;">
+
+<form method="POST">
+
+{% csrf_token %}
+
+<label>Date</label>
+<input type="date" name="date" class="form">
+
+<label>Status</label>
+<select name="status" class="form">
+<option value="Present">Present</option>
+<option value="Absent">Absent</option>
+<option value="Half Day">Half Day</option>
+<option value="Leave">Leave</option>
+</select>
+
+<br><br>
+
+<button type="submit" class="btn">Mark Attendance</button>
+
+</form>
+
+</div>
+
+<style>
+
+.form{
+width:100%;
+padding:12px;
+margin-top:8px;
+border-radius:6px;
+border:1px solid #ddd;
+}
+
+.btn{
+background:#0f1e2e;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.btn:hover{
+background:#d4af37;
+color:black;
+}
+
+</style>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Apply Leave</h2>
+
+<br>
+
+<div style="background:white;padding:25px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.05);width:600px;">
+
+<form method="POST">
+
+{% csrf_token %}
+
+<label>From Date</label>
+<input type="date" name="from_date" class="form">
+
+<label>To Date</label>
+<input type="date" name="to_date" class="form">
+
+<label>Leave Type</label>
+<select name="leave_type" class="form">
+<option>Casual Leave</option>
+<option>Sick Leave</option>
+<option>Paid Leave</option>
+<option>Emergency Leave</option>
+</select>
+
+<label>Reason</label>
+<textarea name="reason" class="form" rows="4"></textarea>
+
+<br>
+
+<button type="submit" class="btn">Apply Leave</button>
+
+</form>
+
+</div>
+
+<style>
+
+.form{
+width:100%;
+padding:12px;
+margin-top:8px;
+border-radius:6px;
+border:1px solid #ddd;
+}
+
+textarea{
+resize:none;
+}
+
+.btn{
+background:#0f1e2e;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.btn:hover{
+background:#d4af37;
+color:black;
+}
+
+</style>
+
+{% endblock %}

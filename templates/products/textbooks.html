@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Textbook Printing</h1>
+<p>High Quality Textbook Printing for Schools & Colleges</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Educational Textbook Printing</h2>
+
+<p>
+ScholVex provides professional textbook printing 
+services for schools, colleges and institutions 
+with high quality paper and binding.
+</p>
+
+<ul>
+<li>School Textbooks</li>
+<li>College Books</li>
+<li>Custom Content Printing</li>
+<li>Hard & Soft Binding</li>
+<li>Color Printing</li>
+<li>Bulk Printing</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/textbooks.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-book"></i>
+<h3>Quality Paper</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-print"></i>
+<h3>HD Printing</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-layer-group"></i>
+<h3>Strong Binding</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-palette"></i>
+<h3>Color Printing</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-school"></i>
+<h3>School Branding</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-box"></i>
+<h3>Bulk Supply</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Print Your Textbooks</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

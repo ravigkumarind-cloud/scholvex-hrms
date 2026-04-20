@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>School ERP Software</h1>
+<p>Complete Digital School Management Platform</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>All-in-One School ERP</h2>
+
+<p>
+ScholVex School ERP provides complete automation 
+for admissions, attendance, fees, exams and communication.
+</p>
+
+<ul>
+<li>Student Management</li>
+<li>Attendance</li>
+<li>Fee Management</li>
+<li>Exam & Report Cards</li>
+<li>Parent Communication</li>
+<li>Transport</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/school-erp.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-users"></i>
+<h3>Student Management</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-calendar-check"></i>
+<h3>Attendance</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-money-bill"></i>
+<h3>Fee Management</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-bell"></i>
+<h3>Notifications</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-mobile"></i>
+<h3>Mobile App</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-file"></i>
+<h3>Report Cards</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Request Demo</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

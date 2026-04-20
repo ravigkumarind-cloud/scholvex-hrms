@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="page-hero">
+<div class="container">
+<h1>Page Title</h1>
+<p>Page description subtitle</p>
+</div>
+</section>
+
+
+<!-- IMAGE + TEXT -->
+<section class="page-info">
+<div class="container page-info-grid">
+
+<div>
+<h2>Main Heading</h2>
+
+<p>
+ScholVex Solutions provides complete infrastructure 
+and digital transformation services for institutions.
+</p>
+
+<ul>
+<li>Complete setup</li>
+<li>Professional support</li>
+<li>Automation</li>
+<li>Growth support</li>
+</ul>
+
+</div>
+
+<div>
+<img src="{% static 'page.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<!-- 4 IMAGE HIGHLIGHTS -->
+<section class="page-highlights">
+<div class="container">
+
+<h2 class="section-title">Key Highlights</h2>
+
+<div class="highlight-grid">
+
+<div class="highlight-card">
+<img src="{% static 'img1.jpg' %}">
+<h3>Complete Setup</h3>
+<p>End to end infrastructure</p>
+</div>
+
+<div class="highlight-card">
+<img src="{% static 'img2.jpg' %}">
+<h3>Automation</h3>
+<p>Smart campus solutions</p>
+</div>
+
+<div class="highlight-card">
+<img src="{% static 'img3.jpg' %}">
+<h3>Professional Team</h3>
+<p>Dedicated support</p>
+</div>
+
+<div class="highlight-card">
+<img src="{% static 'img4.jpg' %}">
+<h3>Growth Support</h3>
+<p>Admission increase</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- FEATURES -->
+<section class="solution-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-users"></i>
+<h3>Management</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-chart-line"></i>
+<h3>Analytics</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-mobile"></i>
+<h3>Mobile App</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-lock"></i>
+<h3>Security</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-cloud"></i>
+<h3>Cloud</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-headset"></i>
+<h3>Support</h3>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- CTA -->
+<section class="page-cta">
+<div class="container">
+<h2>Request Demo</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

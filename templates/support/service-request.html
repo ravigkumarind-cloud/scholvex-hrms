@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="page-hero">
+<div class="container">
+<h1>Service Request</h1>
+<p>Request Technical or Service Assistance</p>
+</div>
+</section>
+
+
+<!-- INTRO -->
+<section class="page-info">
+<div class="container page-info-grid">
+
+<div>
+<h2>Submit Service Request</h2>
+
+<p>
+ScholVex service request allows institutions 
+to request technical, installation and maintenance services.
+</p>
+
+<p>
+Our team will review your request and 
+schedule support accordingly.
+</p>
+
+<ul>
+<li>Technical service request</li>
+<li>Installation request</li>
+<li>Maintenance request</li>
+<li>Upgrade request</li>
+<li>AMC support request</li>
+<li>Onsite visit request</li>
+</ul>
+</div>
+
+<div>
+<img src="{% static 'support/service.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+
+<!-- FORM -->
+<section class="ticket-section">
+<div class="container">
+
+<h2 class="section-title">Request Service</h2>
+
+<form method="POST" action="/service-request/">
+{% csrf_token %}
+
+<div class="ticket-grid">
+
+<input type="text" name="institution" placeholder="Institution Name" required>
+<input type="text" name="contact_person" placeholder="Contact Person">
+
+<input type="email" name="email" placeholder="Email Address" required>
+<input type="text" name="phone" placeholder="Phone Number">
+
+<select name="service">
+<option value="">Select Service</option>
+<option>Installation</option>
+<option>Technical Support</option>
+<option>AMC Service</option>
+<option>Upgrade</option>
+<option>Onsite Visit</option>
+</select>
+
+<select name="time">
+<option value="">Preferred Time</option>
+<option>Immediate</option>
+<option>Today</option>
+<option>Tomorrow</option>
+<option>This Week</option>
+</select>
+
+<textarea name="message" placeholder="Service details"></textarea>
+
+<button type="submit" class="btn-primary">Submit Request</button>
+
+</div>
+
+</form>
+
+</div>
+</section>
+
+
+
+<!-- PROCESS -->
+<section class="page-highlights">
+<div class="container">
+
+<h2 class="section-title">Service Process</h2>
+
+<div class="highlight-grid">
+
+<div class="highlight-card">
+<h3>Submit Request</h3>
+<p>Service request submitted</p>
+</div>
+
+<div class="highlight-card">
+<h3>Team Review</h3>
+<p>Support team analysis</p>
+</div>
+
+<div class="highlight-card">
+<h3>Schedule</h3>
+<p>Visit planning</p>
+</div>
+
+<div class="highlight-card">
+<h3>Service Delivered</h3>
+<p>Issue resolved</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+
+<!-- CTA -->
+<section class="page-cta">
+<div class="container">
+<h2>Need Immediate Service?</h2>
+<p>Contact our support team</p>
+<a href="/contact/" class="btn-primary">Contact Support</a>
+</div>
+</section>
+
+{% endblock %}

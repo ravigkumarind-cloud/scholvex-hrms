@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-header">
+<div class="container">
+<h1>Our Clients</h1>
+<p>Trusted by Schools, Colleges & Institutions</p>
+</div>
+</section>
+
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="center">Our Happy Clients</h2>
+
+<div class="client-grid">
+
+<div class="client-card">
+<img src="{% static 'clients/client1.png' %}">
+<h4>ABC School</h4>
+<p>Hyderabad</p>
+</div>
+
+<div class="client-card">
+<img src="{% static 'clients/client2.png' %}">
+<h4>XYZ College</h4>
+<p>Vijayawada</p>
+</div>
+
+<div class="client-card">
+<img src="{% static 'clients/client3.png' %}">
+<h4>Smart Academy</h4>
+<p>Guntur</p>
+</div>
+
+<div class="client-card">
+<img src="{% static 'clients/client4.png' %}">
+<h4>Future School</h4>
+<p>Warangal</p>
+</div>
+
+<div class="client-card">
+<img src="{% static 'clients/client5.png' %}">
+<h4>Bright College</h4>
+<p>Nellore</p>
+</div>
+
+<div class="client-card">
+<img src="{% static 'clients/client6.png' %}">
+<h4>Elite Institute</h4>
+<p>Tirupati</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<style>
+
+.page-header{
+background:#0B2C5F;
+color:white;
+padding:80px 20px;
+text-align:center;
+}
+
+.section{
+padding:70px 20px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+}
+
+.center{
+text-align:center;
+margin-bottom:40px;
+}
+
+.client-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+}
+
+.client-card{
+background:white;
+padding:30px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.client-card img{
+height:60px;
+margin-bottom:15px;
+}
+
+@media(max-width:768px){
+.client-grid{
+grid-template-columns:1fr 1fr;
+}
+}
+
+</style>
+
+{% endblock %}

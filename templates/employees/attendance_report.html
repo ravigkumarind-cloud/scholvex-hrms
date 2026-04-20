@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Attendance Report</h2>
+
+<br>
+
+<div style="background:white;padding:20px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+
+<table style="width:100%;border-collapse:collapse;">
+
+<tr style="background:#f4f6fb;text-align:left;">
+<th style="padding:12px;">Employee</th>
+<th style="padding:12px;">Date</th>
+<th style="padding:12px;">Status</th>
+</tr>
+
+{% for a in attendance %}
+
+<tr style="border-top:1px solid #eee;">
+
+<td style="padding:10px;">{{ a.employee.name }}</td>
+<td style="padding:10px;">{{ a.date }}</td>
+
+<td style="padding:10px;">
+
+{% if a.status == "Present" %}
+<span style="color:green;">Present</span>
+{% elif a.status == "Absent" %}
+<span style="color:red;">Absent</span>
+{% elif a.status == "Half Day" %}
+<span style="color:orange;">Half Day</span>
+{% else %}
+<span style="color:gray;">Leave</span>
+{% endif %}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

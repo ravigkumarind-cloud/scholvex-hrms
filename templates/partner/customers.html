@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Customers</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI;
+background:#f5f7fb;
+}
+
+.sidebar{
+width:250px;
+background:#0B2C5F;
+position:fixed;
+top:0;
+bottom:0;
+color:white;
+}
+
+.logo{
+padding:20px;
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.logo img{
+height:45px;
+}
+
+.menu a{
+display:block;
+color:white;
+padding:14px 20px;
+text-decoration:none;
+}
+
+.menu a:hover{
+background:#1e4fa3;
+}
+
+.content{
+margin-left:250px;
+padding:25px;
+}
+
+.table{
+background:white;
+padding:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+border-bottom:1px solid #eee;
+text-align:left;
+}
+
+th{
+background:#f5f7fb;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+<img src="{% static 'logo.png' %}">
+</div>
+
+<div class="menu">
+<a href="/partner/">Dashboard</a>
+<a href="/partner/leads/">My Leads</a>
+<a href="/partner/customers/">My Customers</a>
+<a href="#">Commission</a>
+<a href="#">Reports</a>
+<a href="#">Profile</a>
+</div>
+
+</div>
+
+<div class="content">
+
+<h2>My Customers</h2>
+
+<div class="table">
+
+<table>
+<tr>
+<th>Name</th>
+<th>Phone</th>
+<th>Service</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Ramesh</td>
+<td>9876543210</td>
+<td>ERP Software</td>
+<td>Active</td>
+</tr>
+
+<tr>
+<td>Mahesh</td>
+<td>9123456780</td>
+<td>Website</td>
+<td>Completed</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</body>
+</html>

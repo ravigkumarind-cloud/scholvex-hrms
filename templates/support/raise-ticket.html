@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="page-hero">
+<div class="container">
+<h1>Raise Support Ticket</h1>
+<p>Submit Your Support Request</p>
+</div>
+</section>
+
+
+<!-- INTRO -->
+<section class="page-info">
+<div class="container page-info-grid">
+
+<div>
+<h2>Raise Service Request</h2>
+
+<p>
+Institutions can raise support tickets for 
+technical issues, service requests and assistance.
+</p>
+
+<p>
+Our support team will review and resolve 
+your request quickly.
+</p>
+
+<ul>
+<li>Technical support request</li>
+<li>Software issue reporting</li>
+<li>Service request submission</li>
+<li>Priority support</li>
+<li>Ticket tracking</li>
+<li>Quick response</li>
+</ul>
+</div>
+
+<div>
+<img src="{% static 'support/raise.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+
+<!-- SUCCESS MESSAGE -->
+{% if request.GET.success %}
+<section class="ticket-success">
+<div class="container">
+<p>Your Ticket ID: <strong>{{ request.GET.success }}</strong></p>
+</div>
+</section>
+{% endif %}
+
+
+
+<!-- FORM -->
+<section class="ticket-section">
+<div class="container">
+
+<h2 class="section-title">Submit Ticket</h2>
+
+<form method="POST" action="/submit-ticket/">
+{% csrf_token %}
+
+<div class="ticket-grid">
+
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="text" name="institution" placeholder="Institution Name">
+
+<input type="email" name="email" placeholder="Email Address" required>
+<input type="text" name="phone" placeholder="Phone Number">
+
+<select name="product">
+<option value="">Select Product</option>
+<option>School ERP</option>
+<option>College ERP</option>
+<option>Biometric</option>
+<option>Website</option>
+</select>
+
+<select name="priority">
+<option value="">Select Priority</option>
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+<option>Urgent</option>
+</select>
+
+<textarea name="message" placeholder="Describe your issue"></textarea>
+
+<button type="submit" class="btn-primary">Submit Ticket</button>
+
+</div>
+
+</form>
+
+</div>
+</section>
+
+
+
+<!-- BENEFITS -->
+<section class="page-info">
+<div class="container page-info-grid">
+
+<div>
+<img src="{% static 'support/ticket-form.jpg' %}">
+</div>
+
+<div>
+<h2>Ticket Process</h2>
+
+<ul>
+<li>Submit request</li>
+<li>Ticket generated</li>
+<li>Support team assigned</li>
+<li>Issue analysis</li>
+<li>Resolution</li>
+<li>Ticket closed</li>
+</ul>
+
+</div>
+
+</div>
+</section>
+
+
+
+<!-- CTA -->
+<section class="page-cta">
+<div class="container">
+<h2>Need Immediate Support?</h2>
+<p>Contact our helpdesk team</p>
+<a href="/contact/" class="btn-primary">Contact Support</a>
+</div>
+</section>
+
+{% endblock %}

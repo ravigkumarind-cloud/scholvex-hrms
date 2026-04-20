@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- PAGE HEADER -->
+
+<section class="page-banner">
+<h1>Our Services</h1>
+<p>Complete Solutions for Educational Institutions</p>
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services-page">
+
+<div class="services-grid">
+
+<div class="service-box">
+<h3>School ERP Software</h3>
+<p>Complete school management system with attendance, fees, exams and reports.</p>
+</div>
+
+<div class="service-box">
+<h3>College ERP Software</h3>
+<p>Automation for colleges with student lifecycle management.</p>
+</div>
+
+<div class="service-box">
+<h3>Biometric Attendance</h3>
+<p>Fingerprint and face attendance system for staff & students.</p>
+</div>
+
+<div class="service-box">
+<h3>Bulk SMS</h3>
+<p>Send notifications to parents and students instantly.</p>
+</div>
+
+<div class="service-box">
+<h3>WhatsApp Marketing</h3>
+<p>Communicate with parents using WhatsApp messaging.</p>
+</div>
+
+<div class="service-box">
+<h3>RCS Messaging</h3>
+<p>Advanced messaging with branding and interactive buttons.</p>
+</div>
+
+<div class="service-box">
+<h3>CCTV Solutions</h3>
+<p>Campus security cameras with live monitoring.</p>
+</div>
+
+<div class="service-box">
+<h3>ID Cards Printing</h3>
+<p>Student and staff ID cards with barcode and RFID.</p>
+</div>
+
+<div class="service-box">
+<h3>Uniform Supply</h3>
+<p>School uniforms, ties, belts and accessories.</p>
+</div>
+
+<div class="service-box">
+<h3>Website Development</h3>
+<p>Professional websites for schools and colleges.</p>
+</div>
+
+<div class="service-box">
+<h3>Mobile App</h3>
+<p>Android & iOS apps for institutions.</p>
+</div>
+
+<div class="service-box">
+<h3>Digital Marketing</h3>
+<p>Admissions marketing campaigns for institutions.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<style>
+
+.page-banner{
+background:#0f1e2e;
+color:white;
+padding:60px;
+text-align:center;
+}
+
+.services-page{
+padding:60px 40px;
+background:#f5f7fa;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.service-box{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.05);
+transition:.3s;
+}
+
+.service-box:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+.service-box h3{
+color:#0f1e2e;
+margin-bottom:10px;
+}
+
+</style>
+
+{% endblock %}

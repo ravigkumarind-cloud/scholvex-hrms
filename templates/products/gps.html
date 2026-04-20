@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>GPS Tracking System</h1>
+<p>Real-Time School Bus Tracking Solution</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Live Bus Tracking</h2>
+
+<p>
+ScholVex GPS Tracking System helps schools and colleges 
+track buses in real-time with route monitoring, parent 
+alerts and safety features.
+</p>
+
+<ul>
+<li>Real-time Bus Tracking</li>
+<li>Route Monitoring</li>
+<li>Parent Notifications</li>
+<li>Geo-fencing Alerts</li>
+<li>Driver Monitoring</li>
+<li>Mobile App Integration</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/gps.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-map-marker"></i>
+<h3>Live Location</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-route"></i>
+<h3>Route Tracking</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-bell"></i>
+<h3>Parent Alerts</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-shield"></i>
+<h3>Student Safety</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-mobile"></i>
+<h3>Mobile Tracking</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-clock"></i>
+<h3>History Reports</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Track Your School Buses</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,637 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="marketing-dashboard">
+
+<div class="dashboard-shell">
+
+{% if messages %}
+{% for message in messages %}
+<div class="notice success">{{ message }}</div>
+{% endfor %}
+{% endif %}
+
+<div class="dash-hero">
+<div>
+<p class="eyebrow">Marketing Executive Workspace</p>
+<h1>Good work starts with a clear board.</h1>
+<p class="hero-copy">Targets, leads, follow ups, payroll, leave, and alerts stay in one place.</p>
+</div>
+
+<div class="profile-panel">
+{% if employee.photo %}
+<img src="{{ employee.photo.url }}" alt="{{ employee.name }}">
+{% else %}
+<img src="{% static 'logo.png' %}" alt="{{ employee.name|default:'Employee' }}">
+{% endif %}
+<div>
+<h3>{{ employee.name|default:"Marketing Executive" }}</h3>
+<p>{{ employee.designation|default:"Marketing Team" }}</p>
+<span>{{ employee.department|default:"Marketing Department" }}</span>
+</div>
+</div>
+</div>
+
+<div class="metric-grid">
+<div class="metric-card">
+<span>Daily Target</span>
+<strong>{{ today_report.daily_target|default:0 }}</strong>
+<small>Today</small>
+</div>
+<div class="metric-card">
+<span>Closed Target</span>
+<strong>{{ today_report.closed_target|default:0 }}</strong>
+<small>{{ performance }}% weekly pace</small>
+</div>
+<div class="metric-card">
+<span>Generated Leads</span>
+<strong>{{ today_report.generated_leads|default:0 }}</strong>
+<small>Total {{ leads }}</small>
+</div>
+<div class="metric-card">
+<span>Follow Ups</span>
+<strong>{{ today_report.followups|default:0 }}</strong>
+<small>Total {{ followups }}</small>
+</div>
+</div>
+
+<div class="dashboard-grid">
+
+<div class="panel wide">
+<div class="panel-head">
+<div>
+<h2>Weekly Performance</h2>
+<p>Target vs closed target, leads, and follow ups.</p>
+</div>
+</div>
+
+<div class="chart-board" id="performanceChart"
+data-labels="{{ chart_labels|join:',' }}"
+data-targets="{{ chart_targets|join:',' }}"
+data-closed="{{ chart_closed|join:',' }}"
+data-leads="{{ chart_leads|join:',' }}"
+data-followups="{{ chart_followups|join:',' }}">
+<svg viewBox="0 0 720 260" role="img" aria-label="Weekly marketing performance chart">
+<g class="grid-lines"></g>
+<polyline class="line target-line" points=""></polyline>
+<polyline class="line closed-line" points=""></polyline>
+<g class="bar-group"></g>
+<g class="labels"></g>
+</svg>
+</div>
+
+<div class="legend">
+<span><i class="target-dot"></i> Target</span>
+<span><i class="closed-dot"></i> Closed</span>
+<span><i class="lead-dot"></i> Leads</span>
+<span><i class="follow-dot"></i> Follow Ups</span>
+</div>
+</div>
+
+<div class="panel">
+<div class="panel-head">
+<div>
+<h2>Daily Entry</h2>
+<p>Update today's marketing work.</p>
+</div>
+</div>
+
+<form method="POST" class="stack-form">
+{% csrf_token %}
+<input type="hidden" name="form_type" value="daily_report">
+<input type="date" name="date" value="{{ today|date:'Y-m-d' }}">
+<input type="number" name="daily_target" placeholder="Daily target" value="{{ today_report.daily_target|default:'' }}">
+<input type="number" name="closed_target" placeholder="Closed target" value="{{ today_report.closed_target|default:'' }}">
+<input type="number" name="generated_leads" placeholder="Generated leads" value="{{ today_report.generated_leads|default:'' }}">
+<input type="number" name="followups" placeholder="Follow ups" value="{{ today_report.followups|default:'' }}">
+<textarea name="notes" rows="4" placeholder="Notes">{{ today_report.notes|default:'' }}</textarea>
+<button>Save Daily Report</button>
+</form>
+</div>
+
+<div class="panel">
+<div class="panel-head">
+<div>
+<h2>Salary Snapshot</h2>
+<p>Payroll and latest salary slip.</p>
+</div>
+</div>
+
+{% if latest_payroll %}
+<div class="salary-box">
+<span>Net Salary</span>
+<strong>{{ latest_payroll.net_salary }}</strong>
+<p>{{ latest_payroll.month }}</p>
+<a href="{% url 'payslip_pdf' latest_payroll.id %}">Download Salary Slip</a>
+</div>
+<div class="salary-lines">
+<p><span>Basic</span><b>{{ latest_payroll.basic }}</b></p>
+<p><span>HRA</span><b>{{ latest_payroll.hra }}</b></p>
+<p><span>PF</span><b>{{ latest_payroll.pf }}</b></p>
+<p><span>Bonus</span><b>{{ latest_payroll.bonus }}</b></p>
+</div>
+{% else %}
+<p class="empty">No payroll records yet.</p>
+{% endif %}
+</div>
+
+<div class="panel">
+<div class="panel-head">
+<div>
+<h2>Leave Apply</h2>
+<p>Submit leave request from dashboard.</p>
+</div>
+</div>
+
+<form method="POST" class="stack-form">
+{% csrf_token %}
+<input type="hidden" name="form_type" value="leave">
+<input type="date" name="from_date" required>
+<input type="date" name="to_date" required>
+<textarea name="reason" rows="4" placeholder="Reason" required></textarea>
+<button>Apply Leave</button>
+</form>
+</div>
+
+<div class="panel">
+<div class="panel-head">
+<div>
+<h2>Recent Reports</h2>
+<p>Last submitted marketing entries.</p>
+</div>
+</div>
+
+<div class="report-list">
+{% for report in recent_reports %}
+<div>
+<strong>{{ report.date|date:"d M" }}</strong>
+<span>T {{ report.daily_target }} | C {{ report.closed_target }} | L {{ report.generated_leads }} | F {{ report.followups }}</span>
+</div>
+{% empty %}
+<p class="empty">No reports submitted yet.</p>
+{% endfor %}
+</div>
+</div>
+
+<div class="panel">
+<div class="panel-head">
+<div>
+<h2>Payroll History</h2>
+<p>Recent salary records.</p>
+</div>
+</div>
+
+<div class="report-list">
+{% for payroll in payroll_history %}
+<div>
+<strong>{{ payroll.month }}</strong>
+<span>{{ payroll.net_salary }}</span>
+<a href="{% url 'payslip_pdf' payroll.id %}">Slip</a>
+</div>
+{% empty %}
+<p class="empty">No payroll history yet.</p>
+{% endfor %}
+</div>
+</div>
+
+<div class="panel">
+<div class="panel-head">
+<div>
+<h2>Notifications</h2>
+<p>Alerts from management and HR.</p>
+</div>
+</div>
+
+<div class="notification-list">
+{% for notification in notifications %}
+<div>
+<strong>{{ notification.title }}</strong>
+<p>{{ notification.message }}</p>
+<span>{{ notification.created_at|date:"d M, h:i A" }}</span>
+</div>
+{% empty %}
+<p class="empty">No notifications yet.</p>
+{% endfor %}
+</div>
+</div>
+
+<div class="panel">
+<div class="panel-head">
+<div>
+<h2>Leave History</h2>
+<p>Recent leave requests.</p>
+</div>
+</div>
+
+<div class="report-list">
+{% for leave in leave_history %}
+<div>
+<strong>{{ leave.from_date|date:"d M" }} - {{ leave.to_date|date:"d M" }}</strong>
+<span>{{ leave.status }}</span>
+</div>
+{% empty %}
+<p class="empty">No leave requests yet.</p>
+{% endfor %}
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<style>
+.marketing-dashboard{
+background:#f4f6f9;
+padding:110px 20px 60px;
+min-height:100vh;
+color:#182230;
+}
+
+.dashboard-shell{
+max-width:1380px;
+margin:auto;
+}
+
+.notice{
+padding:12px 16px;
+border-radius:6px;
+margin-bottom:16px;
+}
+
+.success{
+background:#ecfdf3;
+color:#067647;
+}
+
+.dash-hero{
+display:grid;
+grid-template-columns:1fr 360px;
+gap:22px;
+align-items:stretch;
+background:#111827;
+color:#fff;
+border-radius:8px;
+padding:30px;
+}
+
+.eyebrow{
+text-transform:uppercase;
+font-size:12px;
+letter-spacing:0;
+color:#7dd3fc;
+margin:0 0 10px;
+}
+
+.dash-hero h1{
+font-size:38px;
+line-height:1.1;
+margin:0;
+max-width:680px;
+}
+
+.hero-copy{
+color:#d1d5db;
+max-width:620px;
+line-height:1.6;
+}
+
+.profile-panel{
+background:#fff;
+color:#182230;
+border-radius:8px;
+padding:18px;
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.profile-panel img{
+width:86px;
+height:86px;
+border-radius:8px;
+object-fit:cover;
+background:#f4f6f9;
+}
+
+.profile-panel h3{
+margin:0 0 6px;
+}
+
+.profile-panel p,
+.profile-panel span{
+margin:0;
+color:#667085;
+font-size:14px;
+}
+
+.metric-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+margin:22px 0;
+}
+
+.metric-card,
+.panel{
+background:#fff;
+border:1px solid #e4e7ec;
+border-radius:8px;
+box-shadow:0 12px 30px rgba(16,24,40,.05);
+}
+
+.metric-card{
+padding:22px;
+}
+
+.metric-card span,
+.metric-card small{
+display:block;
+color:#667085;
+}
+
+.metric-card strong{
+display:block;
+font-size:34px;
+margin:8px 0;
+}
+
+.dashboard-grid{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:18px;
+align-items:start;
+}
+
+.panel{
+padding:22px;
+}
+
+.wide{
+grid-column:span 1;
+grid-row:span 2;
+}
+
+.panel-head{
+display:flex;
+justify-content:space-between;
+gap:15px;
+margin-bottom:16px;
+}
+
+.panel h2{
+font-size:20px;
+margin:0 0 6px;
+}
+
+.panel p{
+color:#667085;
+line-height:1.5;
+}
+
+.chart-board{
+height:320px;
+background:#f9fafb;
+border:1px solid #e4e7ec;
+border-radius:8px;
+padding:14px;
+}
+
+.chart-board svg{
+width:100%;
+height:100%;
+display:block;
+}
+
+.grid-line{
+stroke:#e4e7ec;
+stroke-width:1;
+}
+
+.line{
+fill:none;
+stroke-width:4;
+stroke-linecap:round;
+stroke-linejoin:round;
+}
+
+.target-line{stroke:#2563eb;}
+.closed-line{stroke:#16a34a;}
+.lead-bar{fill:#0f766e;}
+.follow-bar{fill:#f59e0b;}
+.chart-label{font-size:12px;fill:#667085;}
+
+.legend{
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+margin-top:14px;
+font-size:14px;
+color:#667085;
+}
+
+.legend i{
+display:inline-block;
+width:10px;
+height:10px;
+border-radius:4px;
+margin-right:6px;
+}
+
+.target-dot{background:#2563eb;}
+.closed-dot{background:#16a34a;}
+.lead-dot{background:#0f766e;}
+.follow-dot{background:#f59e0b;}
+
+.stack-form{
+display:grid;
+gap:10px;
+}
+
+.stack-form input,
+.stack-form textarea,
+.stack-form select{
+width:100%;
+border:1px solid #d0d5dd;
+border-radius:6px;
+padding:12px;
+font:inherit;
+}
+
+.stack-form button,
+.salary-box a,
+.report-list a{
+background:#111827;
+color:#fff;
+border:0;
+border-radius:6px;
+padding:11px 14px;
+text-decoration:none;
+cursor:pointer;
+display:inline-block;
+}
+
+.salary-box{
+background:#f9fafb;
+border-radius:8px;
+padding:18px;
+}
+
+.salary-box span,
+.salary-box p{
+color:#667085;
+margin:0 0 8px;
+}
+
+.salary-box strong{
+font-size:34px;
+display:block;
+margin-bottom:8px;
+}
+
+.salary-lines p,
+.report-list div{
+display:flex;
+justify-content:space-between;
+gap:12px;
+border-bottom:1px solid #eaecf0;
+padding:11px 0;
+margin:0;
+}
+
+.report-list a{
+padding:6px 10px;
+font-size:12px;
+}
+
+.notification-list{
+display:grid;
+gap:12px;
+}
+
+.notification-list div{
+border-left:4px solid #2563eb;
+background:#f9fafb;
+border-radius:6px;
+padding:12px;
+}
+
+.notification-list strong{
+display:block;
+margin-bottom:5px;
+}
+
+.notification-list p{
+margin:0 0 8px;
+}
+
+.notification-list span,
+.empty{
+color:#667085;
+font-size:14px;
+}
+
+@media(max-width:1000px){
+.dash-hero,
+.dashboard-grid,
+.metric-grid{
+grid-template-columns:1fr;
+}
+
+.dash-hero h1{
+font-size:30px;
+}
+
+.wide{
+grid-row:auto;
+}
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+const board = document.getElementById("performanceChart");
+if(!board) return;
+
+const labels = board.dataset.labels ? board.dataset.labels.split(",") : [];
+const targets = board.dataset.targets ? board.dataset.targets.split(",").map(Number) : [];
+const closed = board.dataset.closed ? board.dataset.closed.split(",").map(Number) : [];
+const leads = board.dataset.leads ? board.dataset.leads.split(",").map(Number) : [];
+const followups = board.dataset.followups ? board.dataset.followups.split(",").map(Number) : [];
+const svg = board.querySelector("svg");
+const grid = svg.querySelector(".grid-lines");
+const barGroup = svg.querySelector(".bar-group");
+const labelGroup = svg.querySelector(".labels");
+const targetLine = svg.querySelector(".target-line");
+const closedLine = svg.querySelector(".closed-line");
+
+const width = 720;
+const height = 260;
+const left = 38;
+const right = 24;
+const top = 20;
+const bottom = 38;
+const plotWidth = width - left - right;
+const plotHeight = height - top - bottom;
+const allValues = targets.concat(closed, leads, followups);
+const maxValue = Math.max(10, ...allValues);
+const step = labels.length > 1 ? plotWidth / (labels.length - 1) : plotWidth;
+
+function y(value){
+return top + plotHeight - ((value / maxValue) * plotHeight);
+}
+
+function x(index){
+return left + (step * index);
+}
+
+for(let i=0;i<5;i++){
+const yy = top + (plotHeight / 4) * i;
+const line = document.createElementNS("http://www.w3.org/2000/svg","line");
+line.setAttribute("x1", left);
+line.setAttribute("x2", width - right);
+line.setAttribute("y1", yy);
+line.setAttribute("y2", yy);
+line.setAttribute("class", "grid-line");
+grid.appendChild(line);
+}
+
+targetLine.setAttribute("points", targets.map((value,index)=>`${x(index)},${y(value)}`).join(" "));
+closedLine.setAttribute("points", closed.map((value,index)=>`${x(index)},${y(value)}`).join(" "));
+
+labels.forEach((label,index)=>{
+const baseX = x(index);
+const leadHeight = (leads[index] / maxValue) * plotHeight;
+const followHeight = (followups[index] / maxValue) * plotHeight;
+
+const leadBar = document.createElementNS("http://www.w3.org/2000/svg","rect");
+leadBar.setAttribute("x", baseX - 14);
+leadBar.setAttribute("y", top + plotHeight - leadHeight);
+leadBar.setAttribute("width", 10);
+leadBar.setAttribute("height", leadHeight);
+leadBar.setAttribute("rx", 4);
+leadBar.setAttribute("class", "lead-bar");
+barGroup.appendChild(leadBar);
+
+const followBar = document.createElementNS("http://www.w3.org/2000/svg","rect");
+followBar.setAttribute("x", baseX + 4);
+followBar.setAttribute("y", top + plotHeight - followHeight);
+followBar.setAttribute("width", 10);
+followBar.setAttribute("height", followHeight);
+followBar.setAttribute("rx", 4);
+followBar.setAttribute("class", "follow-bar");
+barGroup.appendChild(followBar);
+
+const text = document.createElementNS("http://www.w3.org/2000/svg","text");
+text.setAttribute("x", baseX);
+text.setAttribute("y", height - 10);
+text.setAttribute("text-anchor", "middle");
+text.setAttribute("class", "chart-label");
+text.textContent = label;
+labelGroup.appendChild(text);
+});
+});
+</script>
+
+{% endblock %}

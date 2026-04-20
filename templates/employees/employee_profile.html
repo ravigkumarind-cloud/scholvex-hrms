@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>My Profile</h2>
+
+<br>
+
+<div style="background:white;padding:25px;border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);width:800px;">
+
+<div style="display:flex;gap:30px;align-items:center;">
+
+<div>
+{% if employee.photo %}
+<img src="{{ employee.photo.url }}" 
+style="width:120px;height:120px;border-radius:10px;">
+{% else %}
+<img src="/static/user.png"
+style="width:120px;height:120px;border-radius:10px;">
+{% endif %}
+</div>
+
+<div>
+
+<h3>{{ employee.name }}</h3>
+
+<p><b>Department:</b> {{ employee.department }}</p>
+<p><b>Designation:</b> {{ employee.designation }}</p>
+<p><b>Email:</b> {{ employee.email }}</p>
+<p><b>Phone:</b> {{ employee.phone }}</p>
+<p><b>Joining Date:</b> {{ employee.joining_date }}</p>
+
+</div>
+
+</div>
+
+<br>
+
+<a href="/employees/edit/{{ employee.id }}/"
+style="background:#0f1e2e;color:white;padding:10px 15px;
+text-decoration:none;border-radius:6px;">
+Edit Profile
+</a>
+
+</div>
+
+{% endblock %}

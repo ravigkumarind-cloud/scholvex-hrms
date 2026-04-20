@@ -1,0 +1,76 @@
+{% extends 'base.html' }
+
+{% block content %}
+
+<h2>Chairman Dashboard</h2>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Employees</h3>
+<h2>{{ total_employees }}</h2>
+</div>
+
+<div class="card">
+<h3>Total Departments</h3>
+<h2>{{ total_departments }}</h2>
+</div>
+
+<div class="card">
+<h3>Present Today</h3>
+<h2>{{ present }}</h2>
+</div>
+
+<div class="card">
+<h3>On Leave</h3>
+<h2>{{ leaves }}</h2>
+</div>
+
+</div>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Payroll</h3>
+<h2>₹ {{ payroll }}</h2>
+</div>
+
+<div class="card">
+<h3>Pending Approvals</h3>
+<h2>{{ approvals }}</h2>
+</div>
+
+<div class="card">
+<h3>Channel Partners</h3>
+<h2>{{ partners }}</h2>
+</div>
+
+<div class="card">
+<h3>Branches</h3>
+<h2>{{ branches }}</h2>
+</div>
+
+</div>
+
+<style>
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+</style>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="login-section">
+
+<div class="login-box">
+
+<h2>Register Institution</h2>
+
+<form method="POST">
+{% csrf_token %}
+
+<input type="text" placeholder="Institution Name" required>
+<input type="text" placeholder="Contact Person Name" required>
+<input type="email" placeholder="Email Address" required>
+<input type="text" placeholder="Phone Number" required>
+
+<input type="text" placeholder="City" required>
+<input type="text" placeholder="State" required>
+
+<select required>
+<option>Select Institution Type</option>
+<option>School</option>
+<option>College</option>
+<option>Institute</option>
+</select>
+
+<input type="text" placeholder="Number of Students">
+<input type="password" placeholder="Create Password" required>
+
+<button class="btn-primary">Register</button>
+
+</form>
+
+</div>
+
+</section>
+
+{% endblock %}

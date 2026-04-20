@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Voice Call Solution</h1>
+<p>Automated Voice Calls for Schools & Colleges</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Automated Voice Communication</h2>
+
+<p>
+ScholVex Voice Call Solution enables educational 
+institutions to send automated voice calls to parents 
+and students for important announcements.
+</p>
+
+<ul>
+<li>Automated Voice Calls</li>
+<li>Attendance Alerts</li>
+<li>Fee Reminder Calls</li>
+<li>Emergency Announcements</li>
+<li>Recorded Messages</li>
+<li>Bulk Voice Broadcasting</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/voice-call.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-phone"></i>
+<h3>Bulk Voice Calls</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-microphone"></i>
+<h3>Recorded Messages</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-bell"></i>
+<h3>Instant Alerts</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-users"></i>
+<h3>Parent Calls</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-clock"></i>
+<h3>Scheduled Calls</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-chart-line"></i>
+<h3>Call Reports</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Start Voice Communication</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

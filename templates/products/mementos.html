@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Mementos & Awards</h1>
+<p>Custom Awards & Mementos for Schools & Colleges</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Custom Awards & Trophies</h2>
+
+<p>
+ScholVex provides premium quality mementos, trophies 
+and awards for school and college events, competitions 
+and annual day functions.
+</p>
+
+<ul>
+<li>School Awards</li>
+<li>College Trophies</li>
+<li>Event Mementos</li>
+<li>Custom Engraving</li>
+<li>Logo Branding</li>
+<li>Bulk Supply</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/mementos.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-award"></i>
+<h3>Premium Awards</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-trophy"></i>
+<h3>Custom Trophies</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-star"></i>
+<h3>Event Mementos</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-pen"></i>
+<h3>Custom Engraving</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-school"></i>
+<h3>School Branding</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-box"></i>
+<h3>Bulk Supply</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Order Custom Mementos</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

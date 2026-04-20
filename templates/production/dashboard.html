@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Production Department Dashboard</h2>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Staff</h3>
+<h2>{{ staff }}</h2>
+</div>
+
+<div class="card">
+<h3>Active Projects</h3>
+<h2>{{ projects }}</h2>
+</div>
+
+<div class="card">
+<h3>Completed</h3>
+<h2>{{ completed }}</h2>
+</div>
+
+<div class="card">
+<h3>Pending</h3>
+<h2>{{ pending }}</h2>
+</div>
+
+</div>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Production Today</h3>
+<h2>{{ today }}</h2>
+</div>
+
+<div class="card">
+<h3>Targets</h3>
+<h2>{{ targets }}</h2>
+</div>
+
+<div class="card">
+<h3>Performance</h3>
+<h2>{{ performance }}%</h2>
+</div>
+
+<div class="card">
+<h3>Quality Score</h3>
+<h2>{{ quality }}%</h2>
+</div>
+
+</div>
+
+<style>
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+</style>
+
+{% endblock %}

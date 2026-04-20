@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Add Payroll</h2>
+
+<br>
+
+<div style="background:white;padding:25px;border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);width:700px;">
+
+<form method="POST">
+
+{% csrf_token %}
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;">
+
+<div>
+<label>Employee</label>
+<select name="employee" class="form">
+
+{% for emp in employees %}
+<option value="{{ emp.id }}">{{ emp.name }}</option>
+{% endfor %}
+
+</select>
+</div>
+
+<div>
+<label>Month</label>
+<input type="text" name="month" placeholder="March 2026" class="form">
+</div>
+
+<div>
+<label>Basic Salary</label>
+<input type="number" name="basic" class="form">
+</div>
+
+<div>
+<label>HRA</label>
+<input type="number" name="hra" class="form">
+</div>
+
+<div>
+<label>Bonus</label>
+<input type="number" name="bonus" class="form">
+</div>
+
+<div>
+<label>Deductions</label>
+<input type="number" name="deduction" class="form">
+</div>
+
+</div>
+
+<br>
+
+<button type="submit" class="btn">Save Payroll</button>
+
+</form>
+
+</div>
+
+<style>
+
+.form{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:6px;
+margin-top:5px;
+}
+
+.btn{
+background:#0f1e2e;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.btn:hover{
+background:#d4af37;
+color:black;
+}
+
+</style>
+
+{% endblock %}

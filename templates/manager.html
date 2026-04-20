@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Manager Dashboard</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f5f7fb;
+}
+
+.sidebar{
+width:250px;
+height:100vh;
+background:#0f1e2e;
+color:white;
+position:fixed;
+}
+
+.logo{
+padding:20px;
+text-align:center;
+border-bottom:1px solid #1f3a5f;
+}
+
+.logo img{
+height:50px;
+}
+
+.menu{
+padding:20px;
+}
+
+.menu a{
+display:block;
+color:white;
+padding:12px;
+text-decoration:none;
+margin-bottom:5px;
+border-radius:5px;
+}
+
+.menu a:hover{
+background:#1f3a5f;
+}
+
+.main{
+margin-left:250px;
+padding:30px;
+}
+
+.cards{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.card{
+background:white;
+padding:20px;
+width:220px;
+border-radius:8px;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.card h3{
+margin:0;
+color:#0f1e2e;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+<img src="{% static 'logo.png' %}">
+<h3>Manager</h3>
+</div>
+
+<div class="menu">
+
+<a href="#">Dashboard</a>
+<a href="/employees/">Team Employees</a>
+<a href="/employees/attendance-report/">Attendance</a>
+<a href="/employees/leaves/">Leave Requests</a>
+<a href="#">Reports</a>
+<a href="/logout/">Logout</a>
+
+</div>
+
+</div>
+
+<div class="main">
+
+<h2>Manager Dashboard</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Team</h3>
+<p>Team Employees</p>
+</div>
+
+<div class="card">
+<h3>Attendance</h3>
+<p>View Attendance</p>
+</div>
+
+<div class="card">
+<h3>Leaves</h3>
+<p>Recommend Leaves</p>
+</div>
+
+<div class="card">
+<h3>Reports</h3>
+<p>Team Reports</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

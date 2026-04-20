@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Digital Communication Solution</h1>
+<p>Smart Communication for Institutions</p>
+</div>
+</section>
+
+
+<section class="solution-detail">
+
+<div class="container solution-grid">
+
+<div class="solution-text">
+<h2>Institution Communication Platform</h2>
+
+<p>
+ScholVex Digital Communication solution enables schools 
+and colleges to communicate with students and parents 
+through multiple digital channels.
+</p>
+
+<ul>
+<li>SMS Communication</li>
+<li>WhatsApp Messaging</li>
+<li>Email Notifications</li>
+<li>Mobile App Alerts</li>
+<li>Parent Portal</li>
+<li>Emergency Notifications</li>
+</ul>
+
+</div>
+
+<div class="solution-image">
+<img src="{% static 'communication.jpg' %}">
+</div>
+
+</div>
+
+</section>
+
+
+<section class="solution-features">
+
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-sms"></i>
+<h3>Bulk SMS</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-whatsapp"></i>
+<h3>WhatsApp</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-envelope"></i>
+<h3>Email Alerts</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-mobile"></i>
+<h3>App Notifications</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-users"></i>
+<h3>Parent Portal</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-bell"></i>
+<h3>Alerts</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="solution-cta">
+
+<div class="container">
+<h2>Start Digital Communication</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+
+</section>
+
+{% endblock %}

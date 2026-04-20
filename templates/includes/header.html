@@ -1,0 +1,178 @@
+{% load static %}
+
+<header class="main-header">
+
+<div class="container">
+
+<div class="logo">
+<img src="{% static 'logo.png' %}">
+</div>
+
+<nav class="menu">
+
+<ul>
+
+<li><a href="/">Home</a></li>
+
+<li><a href="#">About</a></li>
+<a href="/services/">Services</a>
+<a href="/contact/">Contact</a>
+<li class="dropdown">
+
+<div class="mega-menu">
+
+<div class="menu-col">
+<h4>Software</h4>
+<a href="#">School ERP</a>
+<a href="#">College ERP</a>
+<a href="#">University ERP</a>
+<a href="#">Institute ERP</a>
+</div>
+
+<div class="menu-col">
+<h4>Marketing</h4>
+<a href="#">Bulk SMS</a>
+<a href="#">WhatsApp</a>
+<a href="#">RCS Messaging</a>
+<a href="#">Email Marketing</a>
+</div>
+
+<div class="menu-col">
+<h4>Hardware</h4>
+<a href="#">Biometric</a>
+<a href="#">CCTV</a>
+<a href="#">Smart Boards</a>
+<a href="#">Networking</a>
+</div>
+
+</div>
+</li>
+
+<li class="dropdown">
+<a href="#">Solutions</a>
+
+<div class="mega-menu">
+
+<div class="menu-col">
+<a href="#">Schools</a>
+<a href="#">Colleges</a>
+<a href="#">Universities</a>
+<a href="#">Institutes</a>
+</div>
+
+</div>
+
+</li>
+
+<li><a href="#">Clients</a></li>
+
+<li><a href="#">Contact</a></li>
+
+<li class="dropdown login-btn">
+<a href="#">Login</a>
+
+<div class="mega-menu login-menu">
+
+<a href="/staff-login/">Staff Login</a>
+<a href="/partner-login/">Channel Partner</a>
+
+</div>
+
+</li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<style>
+
+.main-header{
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+}
+
+.logo img{
+height:50px;
+}
+
+.menu ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+.menu ul li{
+position:relative;
+}
+
+.menu a{
+text-decoration:none;
+color:#0f1e2e;
+font-weight:600;
+}
+
+.menu a:hover{
+color:#d4af37;
+}
+
+.dropdown:hover .mega-menu{
+display:flex;
+}
+
+.mega-menu{
+position:absolute;
+top:40px;
+left:0;
+background:white;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+padding:20px;
+display:none;
+gap:40px;
+min-width:500px;
+}
+
+.menu-col{
+display:flex;
+flex-direction:column;
+}
+
+.menu-col h4{
+color:#0f1e2e;
+margin-bottom:10px;
+}
+
+.menu-col a{
+padding:5px 0;
+}
+
+.login-btn{
+background:#0f1e2e;
+padding:8px 15px;
+border-radius:5px;
+}
+
+.login-btn a{
+color:white;
+}
+
+.login-menu{
+min-width:200px;
+flex-direction:column;
+}
+
+</style>

@@ -1,0 +1,305 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="dept-dashboard">
+<div class="dept-shell">
+
+<div class="dept-hero">
+<div>
+<p class="eyebrow">Department Workspace</p>
+<h1>{{ department_title }}</h1>
+<p>Profile, work metrics, leave, payroll, salary slip, and notifications in one clean view.</p>
+</div>
+
+<div class="profile-card">
+{% if employee.photo %}
+<img src="{{ employee.photo.url }}" alt="{{ employee.name }}">
+{% else %}
+<img src="{% static 'logo.png' %}" alt="{{ employee.name|default:'Employee' }}">
+{% endif %}
+<div>
+<h3>{{ employee.name|default:"Staff Member" }}</h3>
+<p>{{ employee.designation|default:department_name }}</p>
+<span>{{ employee.email|default:"Profile details pending" }}</span>
+</div>
+</div>
+</div>
+
+<div class="metric-grid">
+{% for card in metric_cards %}
+<div class="metric-card">
+<span>{{ card.label }}</span>
+<strong>{{ card.value }}</strong>
+</div>
+{% endfor %}
+</div>
+
+<div class="dept-grid">
+
+<div class="panel">
+<h2>Payroll Snapshot</h2>
+{% if latest_payroll %}
+<div class="salary-box">
+<span>Net Salary</span>
+<strong>{{ latest_payroll.net_salary }}</strong>
+<p>{{ latest_payroll.month }}</p>
+<a href="{% url 'payslip_pdf' latest_payroll.id %}">Download Salary Slip</a>
+</div>
+<div class="lines">
+<p><span>Basic</span><b>{{ latest_payroll.basic }}</b></p>
+<p><span>HRA</span><b>{{ latest_payroll.hra }}</b></p>
+<p><span>PF</span><b>{{ latest_payroll.pf }}</b></p>
+<p><span>Bonus</span><b>{{ latest_payroll.bonus }}</b></p>
+</div>
+{% else %}
+<p class="empty">Payroll details are not available yet.</p>
+{% endif %}
+</div>
+
+<div class="panel">
+<h2>Quick Actions</h2>
+<div class="action-list">
+<a href="{% url 'employee_dashboard' %}">My Profile</a>
+<a href="{% url 'edit_profile' %}">Edit Profile / Photo</a>
+<a href="{% url 'apply_leave' %}">Apply Leave</a>
+<a href="{% url 'my_salary' %}">Salary Details</a>
+</div>
+</div>
+
+<div class="panel">
+<h2>Leave History</h2>
+<div class="lines">
+{% for leave in leave_history %}
+<p><span>{{ leave.from_date|date:"d M" }} - {{ leave.to_date|date:"d M" }}</span><b>{{ leave.status }}</b></p>
+{% empty %}
+<p class="empty">No leave requests yet.</p>
+{% endfor %}
+</div>
+</div>
+
+<div class="panel">
+<h2>Notifications & Alerts</h2>
+<div class="notification-list">
+{% for notification in notifications %}
+<div>
+<strong>{{ notification.title }}</strong>
+<p>{{ notification.message }}</p>
+<span>{{ notification.created_at|date:"d M, h:i A" }}</span>
+</div>
+{% empty %}
+<p class="empty">No notifications yet.</p>
+{% endfor %}
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<style>
+.dept-dashboard{
+background:#f4f6f9;
+padding:110px 20px 60px;
+min-height:100vh;
+color:#182230;
+}
+
+.dept-shell{
+max-width:1320px;
+margin:auto;
+}
+
+.dept-hero{
+display:grid;
+grid-template-columns:1fr 360px;
+gap:22px;
+align-items:stretch;
+background:#111827;
+color:#fff;
+border-radius:8px;
+padding:30px;
+}
+
+.eyebrow{
+text-transform:uppercase;
+font-size:12px;
+letter-spacing:0;
+color:#7dd3fc;
+margin:0 0 10px;
+}
+
+.dept-hero h1{
+font-size:36px;
+margin:0 0 10px;
+line-height:1.1;
+}
+
+.dept-hero p{
+color:#d1d5db;
+line-height:1.6;
+}
+
+.profile-card{
+background:#fff;
+color:#182230;
+border-radius:8px;
+padding:18px;
+display:flex;
+gap:15px;
+align-items:center;
+}
+
+.profile-card img{
+width:86px;
+height:86px;
+border-radius:8px;
+object-fit:cover;
+background:#f4f6f9;
+}
+
+.profile-card h3,
+.profile-card p{
+margin:0 0 6px;
+}
+
+.profile-card p,
+.profile-card span{
+color:#667085;
+font-size:14px;
+}
+
+.metric-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+margin:22px 0;
+}
+
+.metric-card,
+.panel{
+background:#fff;
+border:1px solid #e4e7ec;
+border-radius:8px;
+box-shadow:0 12px 30px rgba(16,24,40,.05);
+}
+
+.metric-card{
+padding:22px;
+}
+
+.metric-card span{
+display:block;
+color:#667085;
+}
+
+.metric-card strong{
+font-size:34px;
+display:block;
+margin-top:8px;
+}
+
+.dept-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+align-items:start;
+}
+
+.panel{
+padding:22px;
+}
+
+.panel h2{
+font-size:20px;
+margin:0 0 16px;
+}
+
+.salary-box{
+background:#f9fafb;
+border-radius:8px;
+padding:18px;
+margin-bottom:10px;
+}
+
+.salary-box span,
+.salary-box p,
+.empty{
+color:#667085;
+}
+
+.salary-box strong{
+display:block;
+font-size:34px;
+margin:8px 0;
+}
+
+.salary-box a,
+.action-list a{
+display:inline-block;
+text-decoration:none;
+background:#111827;
+color:#fff;
+border-radius:6px;
+padding:11px 14px;
+}
+
+.action-list{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.lines p{
+display:flex;
+justify-content:space-between;
+gap:12px;
+border-bottom:1px solid #eaecf0;
+padding:11px 0;
+margin:0;
+}
+
+.notification-list{
+display:grid;
+gap:12px;
+}
+
+.notification-list div{
+border-left:4px solid #2563eb;
+background:#f9fafb;
+border-radius:6px;
+padding:12px;
+}
+
+.notification-list strong{
+display:block;
+margin-bottom:5px;
+}
+
+.notification-list p{
+margin:0 0 8px;
+color:#667085;
+}
+
+.notification-list span{
+color:#667085;
+font-size:14px;
+}
+
+@media(max-width:900px){
+.dept-hero,
+.metric-grid,
+.dept-grid,
+.action-list{
+grid-template-columns:1fr;
+}
+
+.dept-hero h1{
+font-size:30px;
+}
+}
+</style>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Legal Department Dashboard</h2>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Cases</h3>
+<h2>{{ cases }}</h2>
+</div>
+
+<div class="card">
+<h3>Active Cases</h3>
+<h2>{{ active }}</h2>
+</div>
+
+<div class="card">
+<h3>Closed Cases</h3>
+<h2>{{ closed }}</h2>
+</div>
+
+<div class="card">
+<h3>Notices</h3>
+<h2>{{ notices }}</h2>
+</div>
+
+</div>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Agreements</h3>
+<h2>{{ agreements }}</h2>
+</div>
+
+<div class="card">
+<h3>Pending Approval</h3>
+<h2>{{ pending }}</h2>
+</div>
+
+<div class="card">
+<h3>Contracts</h3>
+<h2>{{ contracts }}</h2>
+</div>
+
+<div class="card">
+<h3>Legal Team</h3>
+<h2>{{ team }}</h2>
+</div>
+
+</div>
+
+<style>
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+</style>
+
+{% endblock %}

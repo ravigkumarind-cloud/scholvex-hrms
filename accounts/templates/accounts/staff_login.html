@@ -1,0 +1,225 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Staff Login</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI;
+background:linear-gradient(135deg,#0B2C5F,#1e4fa3);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.login-box{
+background:white;
+padding:40px;
+width:420px;
+box-shadow:0 15px 40px rgba(0,0,0,.2);
+border-radius:6px;
+}
+
+.logo{
+text-align:center;
+margin-bottom:15px;
+}
+
+.logo img{
+height:55px;
+}
+
+h3{
+text-align:center;
+color:#0B2C5F;
+margin-bottom:20px;
+}
+
+select,input{
+width:100%;
+padding:12px;
+margin-top:12px;
+border:1px solid #ddd;
+border-radius:4px;
+font-size:14px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:18px;
+background:#0B2C5F;
+color:white;
+border:none;
+border-radius:4px;
+font-size:15px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1e4fa3;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<div class="logo">
+<img src="{% static 'logo.png' %}">
+</div>
+
+<h3>Staff Login</h3>
+
+{% if messages %}
+{% for message in messages %}
+<div style="background:#fff3f3;color:#b42318;padding:10px;border-radius:4px;font-size:13px;margin-bottom:10px;">
+{{ message }}
+</div>
+{% endfor %}
+{% endif %}
+
+<form method="POST">
+{% csrf_token %}
+
+<select id="department" name="department" onchange="loadRoles()">
+<option value="">Select Department</option>
+
+<option value="management">Management</option>
+<option value="hr">HR Department</option>
+<option value="marketing">Marketing Department</option>
+<option value="sales">Sales Department</option>
+<option value="technical">Technical Department</option>
+<option value="accounts">Accounts Department</option>
+<option value="legal">Legal Department</option>
+<option value="bpo">BPO Department</option>
+<option value="production">Production Department</option>
+<option value="pro">PRO Department</option>
+<option value="security">Security Department</option>
+
+</select>
+
+<select id="role" name="role">
+<option value="">Select Role</option>
+</select>
+
+<input type="text" name="username" placeholder="Username / Email" required>
+<input type="password" name="password" placeholder="Password" required>
+
+<button type="submit">Login</button>
+
+</form>
+
+</div>
+
+<script>
+
+function loadRoles(){
+
+var dept=document.getElementById("department").value;
+var role=document.getElementById("role");
+
+if(dept=="management"){
+role.innerHTML=`
+<option value="CHAIRMAN">Chairman</option>
+<option value="MD">Managing Director</option>
+<option value="DIRECTOR">Director</option>
+<option value="MANAGER">General Manager</option>
+`;
+}
+
+else if(dept=="hr"){
+role.innerHTML=`
+<option value="HR">HR Head</option>
+<option value="HR">HR Manager</option>
+<option value="HR">HR Executive</option>
+`;
+}
+
+else if(dept=="marketing"){
+role.innerHTML=`
+<option value="MARKETING">Marketing Head</option>
+<option value="MARKETING">Regional Manager</option>
+<option value="MANAGER">Branch Manager</option>
+<option value="TL">Team Leader</option>
+<option value="MARKETING">Executive</option>
+`;
+}
+
+else if(dept=="sales"){
+role.innerHTML=`
+<option value="SALES">Sales Head</option>
+<option value="SALES">Regional Sales Manager</option>
+<option value="SALES">Sales Manager</option>
+<option value="SALES">Sales Executive</option>
+<option value="SALES">Field Executive</option>
+`;
+}
+
+else if(dept=="technical"){
+role.innerHTML=`
+<option value="TECHNICAL">Technical Head</option>
+<option value="TECHNICAL">Developer</option>
+<option value="TECHNICAL">Support Engineer</option>
+`;
+}
+
+else if(dept=="accounts"){
+role.innerHTML=`
+<option value="ACCOUNTS">CFO</option>
+<option value="ACCOUNTS">Accounts Manager</option>
+<option value="ACCOUNTS">Accounts Executive</option>
+`;
+}
+
+else if(dept=="legal"){
+role.innerHTML=`
+<option value="LEGAL">Legal Head</option>
+<option value="LEGAL">Advocate</option>
+`;
+}
+
+else if(dept=="bpo"){
+role.innerHTML=`
+<option value="BPO">BPO Manager</option>
+<option value="BPO">BPO Executive</option>
+`;
+}
+
+else if(dept=="production"){
+role.innerHTML=`
+<option value="PRODUCTION">Production Head</option>
+<option value="PRODUCTION">Production Manager</option>
+<option value="PRODUCTION">Production Staff</option>
+`;
+}
+
+else if(dept=="pro"){
+role.innerHTML=`
+<option value="PRO">PRO Head</option>
+<option value="PRO">PRO Executive</option>
+`;
+}
+
+else if(dept=="security"){
+role.innerHTML=`
+<option value="SECURITY">Security Head</option>
+<option value="SECURITY">Security Officer</option>
+`;
+}
+
+}
+
+</script>
+
+</body>
+</html>

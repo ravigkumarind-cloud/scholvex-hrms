@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Institute ERP Software</h1>
+<p>Complete Automation for Training Institutes</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Institute Management System</h2>
+
+<p>
+ScholVex Institute ERP is designed for coaching centers,
+training institutes and academies to manage students,
+batches, fees and communication.
+</p>
+
+<ul>
+<li>Batch Management</li>
+<li>Student Enrollment</li>
+<li>Attendance Tracking</li>
+<li>Fee Collection</li>
+<li>Faculty Management</li>
+<li>Certificate Generation</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/institute-erp.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-layer-group"></i>
+<h3>Batch Management</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-user-plus"></i>
+<h3>Student Enrollment</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-calendar-check"></i>
+<h3>Attendance</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-money-bill"></i>
+<h3>Fee Management</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-chalkboard-teacher"></i>
+<h3>Faculty Management</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-certificate"></i>
+<h3>Certificates</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Request Demo</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

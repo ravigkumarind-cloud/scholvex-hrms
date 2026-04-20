@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Smart Classroom Solution</h1>
+<p>Interactive Digital Learning for Modern Classrooms</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Interactive Smart Class</h2>
+
+<p>
+ScholVex Smart Classroom transforms traditional classrooms 
+into interactive digital learning environments using smart 
+boards, projectors and digital content.
+</p>
+
+<ul>
+<li>Interactive Smart Board</li>
+<li>Digital Projector</li>
+<li>Audio System</li>
+<li>Digital Content</li>
+<li>Teacher Panel</li>
+<li>Student Engagement Tools</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/smart-class.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-chalkboard"></i>
+<h3>Interactive Board</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-video"></i>
+<h3>Digital Projector</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-volume-up"></i>
+<h3>Audio System</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-book"></i>
+<h3>Digital Content</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-user"></i>
+<h3>Teacher Panel</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-users"></i>
+<h3>Student Interaction</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Upgrade Your Classroom</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

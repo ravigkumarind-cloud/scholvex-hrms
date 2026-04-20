@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Staff Management</h1>
+<p>Complete Staff & Faculty Management System</p>
+</div>
+</section>
+
+
+<section class="solution-detail">
+
+<div class="container solution-grid">
+
+<div class="solution-text">
+<h2>Staff Management System</h2>
+
+<p>
+ScholVex Staff Management solution helps institutions 
+manage staff details, attendance, payroll and 
+performance tracking.
+</p>
+
+<ul>
+<li>Staff Profiles</li>
+<li>Attendance Tracking</li>
+<li>Payroll Management</li>
+<li>Leave Management</li>
+<li>Role Management</li>
+<li>Performance Tracking</li>
+</ul>
+
+</div>
+
+<div class="solution-image">
+<img src="{% static 'staff.jpg' %}">
+</div>
+
+</div>
+
+</section>
+
+
+<section class="solution-features">
+
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-user"></i>
+<h3>Staff Profiles</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-calendar-check"></i>
+<h3>Attendance</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-money-bill"></i>
+<h3>Payroll</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-calendar"></i>
+<h3>Leave</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-user-shield"></i>
+<h3>Roles</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-chart-line"></i>
+<h3>Performance</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="solution-cta">
+
+<div class="container">
+<h2>Manage Staff Efficiently</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+
+</section>
+
+{% endblock %}

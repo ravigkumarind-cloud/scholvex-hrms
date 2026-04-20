@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="careers-section">
+<div class="container">
+
+<h2 class="section-title">Candidate Applications Board</h2>
+
+{% if messages %}
+{% for message in messages %}
+<p style="background:#ecfdf3;color:#067647;padding:12px;border-radius:4px;">{{ message }}</p>
+{% endfor %}
+{% endif %}
+
+<div class="jobs-grid">
+
+{% for application in applications %}
+<div class="job-card">
+<h3>{{ application.job_title }}</h3>
+<p>{{ application.candidate.candidate_profile.full_name }}</p>
+<span>{{ application.department }} | {{ application.location }}</span>
+<p><strong>Email:</strong> {{ application.candidate.email }}</p>
+<p><strong>Phone:</strong> {{ application.candidate.candidate_profile.phone }}</p>
+<p><strong>Status:</strong> {{ application.get_status_display }}</p>
+
+{% if application.resume %}
+<p><a href="{{ application.resume.url }}" target="_blank">View Resume</a></p>
+{% endif %}
+
+<form method="POST">
+{% csrf_token %}
+<input type="hidden" name="application_id" value="{{ application.id }}">
+
+<select name="status">
+{% for value, label in status_choices %}
+<option value="{{ value }}" {% if application.status == value %}selected{% endif %}>{{ label }}</option>
+{% endfor %}
+</select>
+
+<textarea name="notes" rows="3" placeholder="HR notes">{{ application.notes }}</textarea>
+<button class="apply-btn">Update Status</button>
+</form>
+</div>
+{% empty %}
+<div class="job-card">
+<h3>No candidate applications yet</h3>
+<p>Applications from Careers page will appear here.</p>
+</div>
+{% endfor %}
+
+</div>
+
+</div>
+</section>
+
+{% endblock %}

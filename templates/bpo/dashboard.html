@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>BPO Department Dashboard</h2>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Agents</h3>
+<h2>{{ agents }}</h2>
+</div>
+
+<div class="card">
+<h3>Calls Today</h3>
+<h2>{{ calls }}</h2>
+</div>
+
+<div class="card">
+<h3>Leads Generated</h3>
+<h2>{{ leads }}</h2>
+</div>
+
+<div class="card">
+<h3>Conversions</h3>
+<h2>{{ conversions }}</h2>
+</div>
+
+</div>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Pending Followups</h3>
+<h2>{{ followups }}</h2>
+</div>
+
+<div class="card">
+<h3>Targets</h3>
+<h2>{{ targets }}</h2>
+</div>
+
+<div class="card">
+<h3>Performance</h3>
+<h2>{{ performance }}%</h2>
+</div>
+
+<div class="card">
+<h3>Shift Active</h3>
+<h2>{{ shift }}</h2>
+</div>
+
+</div>
+
+<style>
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+</style>
+
+{% endblock %}

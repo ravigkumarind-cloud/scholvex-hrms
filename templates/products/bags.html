@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>School Bags</h1>
+<p>Durable & Custom Designed School Bags</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Quality School Bags</h2>
+
+<p>
+ScholVex provides strong and stylish school bags 
+for students with custom branding and bulk supply 
+for schools and colleges.
+</p>
+
+<ul>
+<li>School Bags</li>
+<li>College Bags</li>
+<li>Custom Logo Printing</li>
+<li>Waterproof Material</li>
+<li>Multiple Compartments</li>
+<li>Bulk Supply</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/bags.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-briefcase"></i>
+<h3>Durable Bags</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-droplet"></i>
+<h3>Waterproof</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-layer-group"></i>
+<h3>Multiple Compartments</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-palette"></i>
+<h3>Custom Design</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-school"></i>
+<h3>School Branding</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-box"></i>
+<h3>Bulk Supply</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Order School Bags</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>College ERP Software</h1>
+<p>Complete Digital Management for Colleges</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Complete College Automation</h2>
+
+<p>
+ScholVex College ERP helps colleges manage admissions,
+attendance, academics, examinations and communication
+from a single dashboard.
+</p>
+
+<ul>
+<li>Admission Management</li>
+<li>Student Database</li>
+<li>Attendance Tracking</li>
+<li>Exam Management</li>
+<li>Fee Collection</li>
+<li>Staff Management</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/college-erp.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-user-graduate"></i>
+<h3>Student Management</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-chalkboard"></i>
+<h3>Academic Management</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-calendar-check"></i>
+<h3>Attendance</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-file"></i>
+<h3>Exam Management</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-money-bill"></i>
+<h3>Fee Management</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-users"></i>
+<h3>Staff Management</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Request Demo</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

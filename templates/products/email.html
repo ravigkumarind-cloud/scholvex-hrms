@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Email Communication System</h1>
+<p>Professional Email Communication for Educational Institutions</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Institutional Email Platform</h2>
+
+<p>
+ScholVex Email Communication System helps schools and 
+colleges send professional emails to parents, students 
+and staff with announcements, circulars and updates.
+</p>
+
+<ul>
+<li>Bulk Email Campaigns</li>
+<li>Student Email Alerts</li>
+<li>Staff Communication</li>
+<li>Newsletter Emails</li>
+<li>Attachment Support</li>
+<li>Email Templates</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/email.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-envelope"></i>
+<h3>Bulk Email</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-paper-plane"></i>
+<h3>Instant Delivery</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-file"></i>
+<h3>Attachments</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-users"></i>
+<h3>Group Emails</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-palette"></i>
+<h3>Email Templates</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-chart-line"></i>
+<h3>Email Reports</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Start Email Communication</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

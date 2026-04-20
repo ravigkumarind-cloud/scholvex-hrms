@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Accounts & Finance Dashboard</h2>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Payroll</h3>
+<h2>₹ {{ payroll }}</h2>
+</div>
+
+<div class="card">
+<h3>Paid Salary</h3>
+<h2>₹ {{ paid }}</h2>
+</div>
+
+<div class="card">
+<h3>Pending Salary</h3>
+<h2>₹ {{ pending }}</h2>
+</div>
+
+<div class="card">
+<h3>Employees Paid</h3>
+<h2>{{ employees }}</h2>
+</div>
+
+</div>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Expense Requests</h3>
+<h2>{{ expense }}</h2>
+</div>
+
+<div class="card">
+<h3>Approved Payments</h3>
+<h2>{{ approved }}</h2>
+</div>
+
+<div class="card">
+<h3>Rejected</h3>
+<h2>{{ rejected }}</h2>
+</div>
+
+<div class="card">
+<h3>This Month Budget</h3>
+<h2>₹ {{ budget }}</h2>
+</div>
+
+</div>
+
+<style>
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+</style>
+
+{% endblock %}

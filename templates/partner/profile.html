@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partner Profile</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI;
+background:#f5f7fb;
+}
+
+.sidebar{
+width:250px;
+background:#0B2C5F;
+position:fixed;
+top:0;
+bottom:0;
+color:white;
+}
+
+.logo{
+padding:20px;
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.logo img{
+height:45px;
+}
+
+.menu a{
+display:block;
+color:white;
+padding:14px 20px;
+text-decoration:none;
+}
+
+.menu a:hover{
+background:#1e4fa3;
+}
+
+.content{
+margin-left:250px;
+padding:25px;
+}
+
+.profile-box{
+background:white;
+padding:30px;
+box-shadow:0 5px 15px rgba(0,0,0,.05);
+width:600px;
+}
+
+.profile-row{
+margin-bottom:15px;
+}
+
+label{
+display:block;
+font-weight:600;
+margin-bottom:5px;
+}
+
+input{
+width:100%;
+padding:10px;
+border:1px solid #ddd;
+}
+
+button{
+padding:12px 20px;
+background:#0B2C5F;
+color:white;
+border:none;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+<img src="{% static 'logo.png' %}">
+</div>
+
+<div class="menu">
+<a href="/partner/">Dashboard</a>
+<a href="/partner/leads/">My Leads</a>
+<a href="/partner/customers/">My Customers</a>
+<a href="/partner/commission/">Commission</a>
+<a href="/partner/reports/">Reports</a>
+<a href="/partner/profile/">Profile</a>
+<a href="/logout/">Logout</a>
+</div>
+
+</div>
+
+<div class="content">
+
+<h2>Partner Profile</h2>
+
+<div class="profile-box">
+
+<form>
+
+<div class="profile-row">
+<label>Partner Name</label>
+<input type="text" value="Scholvex Partner">
+</div>
+
+<div class="profile-row">
+<label>Company Name</label>
+<input type="text" value="ABC Solutions">
+</div>
+
+<div class="profile-row">
+<label>Mobile</label>
+<input type="text" value="9876543210">
+</div>
+
+<div class="profile-row">
+<label>Email</label>
+<input type="text" value="partner@gmail.com">
+</div>
+
+<div class="profile-row">
+<label>City</label>
+<input type="text" value="Hyderabad">
+</div>
+
+<button>Update Profile</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

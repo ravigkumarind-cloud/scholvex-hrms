@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Lab Setup Solutions</h1>
+<p>Complete Laboratory Setup for Schools & Colleges</p>
+</div>
+</section>
+
+
+<section class="product-detail">
+<div class="container product-grid">
+
+<div class="product-text">
+<h2>Complete Lab Infrastructure</h2>
+
+<p>
+ScholVex provides complete laboratory setup for schools 
+and colleges including science labs, computer labs 
+and language labs.
+</p>
+
+<ul>
+<li>Physics Lab Setup</li>
+<li>Chemistry Lab Setup</li>
+<li>Biology Lab Setup</li>
+<li>Computer Lab Setup</li>
+<li>Language Lab</li>
+<li>Lab Furniture & Equipment</li>
+</ul>
+
+</div>
+
+<div class="product-image">
+<img src="{% static 'products/lab-setup.jpg' %}">
+</div>
+
+</div>
+</section>
+
+
+<section class="product-features">
+<div class="container">
+
+<h2 class="section-title">Features</h2>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<i class="fa fa-flask"></i>
+<h3>Science Labs</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-computer"></i>
+<h3>Computer Labs</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-microscope"></i>
+<h3>Biology Lab</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-atom"></i>
+<h3>Physics Lab</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-vial"></i>
+<h3>Chemistry Lab</h3>
+</div>
+
+<div class="feature-card">
+<i class="fa fa-school"></i>
+<h3>Complete Setup</h3>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="product-cta">
+<div class="container">
+<h2>Setup Your Lab Today</h2>
+<a href="/contact/" class="btn-primary">Contact Us</a>
+</div>
+</section>
+
+{% endblock %}

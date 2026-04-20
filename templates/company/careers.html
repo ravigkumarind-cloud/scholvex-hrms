@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-hero">
+<div class="container">
+<h1>Careers</h1>
+<p>Join ScholVex Solutions Team</p>
+</div>
+</section>
+
+
+<section class="careers-section">
+
+<div class="container">
+
+<h2 class="section-title">Open Positions</h2>
+
+<div class="jobs-grid">
+
+<div class="job-card">
+<h3>Business Development Executive</h3>
+<p>Marketing Department</p>
+<span>Hyderabad</span>
+<a href="{% url 'candidate_apply' %}?job=Business%20Development%20Executive&department=Marketing%20Department&location=Hyderabad" class="apply-btn">Apply Now</a>
+</div>
+
+<div class="job-card">
+<h3>Branch Manager</h3>
+<p>Operations</p>
+<span>Telangana</span>
+<a href="{% url 'candidate_apply' %}?job=Branch%20Manager&department=Operations&location=Telangana" class="apply-btn">Apply Now</a>
+</div>
+
+<div class="job-card">
+<h3>Technical Executive</h3>
+<p>Support Team</p>
+<span>Andhra Pradesh</span>
+<a href="{% url 'candidate_apply' %}?job=Technical%20Executive&department=Support%20Team&location=Andhra%20Pradesh" class="apply-btn">Apply Now</a>
+</div>
+
+<div class="job-card">
+<h3>Tele Caller</h3>
+<p>Customer Support</p>
+<span>Hyderabad</span>
+<a href="{% url 'candidate_apply' %}?job=Tele%20Caller&department=Customer%20Support&location=Hyderabad" class="apply-btn">Apply Now</a>
+</div>
+
+<div class="job-card">
+<h3>HR Executive</h3>
+<p>Human Resources</p>
+<span>Head Office</span>
+<a href="{% url 'candidate_apply' %}?job=HR%20Executive&department=Human%20Resources&location=Head%20Office" class="apply-btn">Apply Now</a>
+</div>
+
+<div class="job-card">
+<h3>Marketing Manager</h3>
+<p>Sales Department</p>
+<span>All Districts</span>
+<a href="{% url 'candidate_apply' %}?job=Marketing%20Manager&department=Sales%20Department&location=All%20Districts" class="apply-btn">Apply Now</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

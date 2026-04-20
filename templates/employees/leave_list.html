@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Leave Requests</h2>
+
+<br>
+
+<div style="background:white;padding:20px;border-radius:12px;box-shadow:0 5px 20px rgba(0,0,0,0.05);">
+
+<table style="width:100%;border-collapse:collapse;">
+
+<tr style="background:#f4f6fb;text-align:left;">
+<th style="padding:12px;">Employee</th>
+<th style="padding:12px;">From</th>
+<th style="padding:12px;">To</th>
+<th style="padding:12px;">Type</th>
+<th style="padding:12px;">Reason</th>
+<th style="padding:12px;">Status</th>
+</tr>
+
+{% for leave in leaves %}
+
+<tr style="border-top:1px solid #eee;">
+
+<td style="padding:10px;">{{ leave.employee.name }}</td>
+<td style="padding:10px;">{{ leave.from_date }}</td>
+<td style="padding:10px;">{{ leave.to_date }}</td>
+<td style="padding:10px;">{{ leave.leave_type }}</td>
+<td style="padding:10px;">{{ leave.reason }}</td>
+
+<td style="padding:10px;">
+
+{% if leave.status == "Approved" %}
+<span style="color:green;">Approved</span>
+{% elif leave.status == "Rejected" %}
+<span style="color:red;">Rejected</span>
+{% else %}
+<span style="color:orange;">Pending</span>
+{% endif %}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

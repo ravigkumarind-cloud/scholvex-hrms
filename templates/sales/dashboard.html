@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Sales Department Dashboard</h2>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Sales Team</h3>
+<h2>{{ employees }}</h2>
+</div>
+
+<div class="card">
+<h3>Leads</h3>
+<h2>{{ leads }}</h2>
+</div>
+
+<div class="card">
+<h3>Prospects</h3>
+<h2>{{ prospects }}</h2>
+</div>
+
+<div class="card">
+<h3>Closed Deals</h3>
+<h2>{{ closed }}</h2>
+</div>
+
+</div>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Revenue</h3>
+<h2>{{ revenue }}</h2>
+</div>
+
+<div class="card">
+<h3>Targets</h3>
+<h2>{{ targets }}</h2>
+</div>
+
+<div class="card">
+<h3>Follow Ups</h3>
+<h2>{{ followups }}</h2>
+</div>
+
+<div class="card">
+<h3>Performance</h3>
+<h2>{{ performance }}%</h2>
+</div>
+
+</div>
+
+<style>
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+</style>
+
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="page-header">
+    <h2>Organization Hierarchy</h2>
+    <p>ScholVex Solutions Structure</p>
+</div>
+
+<div class="card">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <th>Role</th>
+                <th>Department</th>
+                <th>Reports To</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for emp in employees %}
+            <tr>
+                <td>
+                    <div class="emp-box">
+                        <div class="emp-avatar">
+                            {% if emp.photo %}
+                            <img src="{{ emp.photo.url }}">
+                            {% else %}
+                            <div class="avatar">{{ emp.name|first }}</div>
+                            {% endif %}
+                        </div>
+                        <div>
+                            <strong>{{ emp.name }}</strong><br>
+                            <small>{{ emp.email }}</small>
+                        </div>
+                    </div>
+                </td>
+
+                <td>
+                    <span class="badge role">
+                        {{ emp.role }}
+                    </span>
+                </td>
+
+                <td>
+                    {{ emp.department }}
+                </td>
+
+                <td>
+                    {% if emp.reporting_to %}
+                        {{ emp.reporting_to.name }}
+                    {% else %}
+                        <span class="top-level">
+                            Chairman Level
+                        </span>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+
+<style>
+
+.page-header{
+margin-bottom:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.05);
+}
+
+.table{
+width:100%;
+border-collapse:collapse;
+}
+
+.table th{
+background:#0f1e2e;
+color:white;
+padding:12px;
+text-align:left;
+}
+
+.table td{
+padding:12px;
+border-bottom:1px solid #eee;
+}
+
+.emp-box{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.emp-avatar img{
+width:40px;
+height:40px;
+border-radius:50%;
+}
+
+.avatar{
+width:40px;
+height:40px;
+background:#d4af37;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-weight:bold;
+}
+
+.role{
+background:#d4af37;
+padding:5px 10px;
+border-radius:5px;
+}
+
+.top-level{
+color:#0f1e2e;
+font-weight:bold;
+}
+
+</style>
+
+{% endblock %}
